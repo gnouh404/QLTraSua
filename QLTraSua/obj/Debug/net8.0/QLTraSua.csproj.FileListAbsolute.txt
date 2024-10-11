@@ -29,3 +29,34 @@ D:\Hoc tren truong\Lap trinh web\BTL\QLTraSua\QLTraSua\obj\Debug\net8.0\refint\Q
 D:\Hoc tren truong\Lap trinh web\BTL\QLTraSua\QLTraSua\obj\Debug\net8.0\QLTraSua.pdb
 D:\Hoc tren truong\Lap trinh web\BTL\QLTraSua\QLTraSua\obj\Debug\net8.0\QLTraSua.genruntimeconfig.cache
 D:\Hoc tren truong\Lap trinh web\BTL\QLTraSua\QLTraSua\obj\Debug\net8.0\ref\QLTraSua.dll
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\appsettings.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.staticwebassets.runtime.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.exe
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.deps.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.runtimeconfig.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.dll
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\bin\Debug\net8.0\QLTraSua.pdb
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.AssemblyInfoInputs.cache
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.AssemblyInfo.cs
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.csproj.CoreCompileInputs.cache
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.RazorAssemblyInfo.cache
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.RazorAssemblyInfo.cs
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.sourcelink.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets\msbuild.QLTraSua.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets\msbuild.build.QLTraSua.props
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.QLTraSua.props
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.QLTraSua.props
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\scopedcss\bundle\QLTraSua.styles.css
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\scopedcss\projectbundle\QLTraSua.bundle.scp.css
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.dll
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\refint\QLTraSua.dll
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.pdb
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\QLTraSua.genruntimeconfig.cache
+C:\Users\arima\OneDrive\Máy tính\BTL\EB\QLTraSua\obj\Debug\net8.0\ref\QLTraSua.dll

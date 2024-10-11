@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {}
+    "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj": {}
   },
   "projects": {
-    "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {
+    "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+        "projectUniqueName": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj",
         "projectName": "QLTraSua",
-        "projectPath": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
-        "packagesPath": "C:\\Users\\AnhKim\\.nuget\\packages\\",
-        "outputPath": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\obj\\",
+        "projectPath": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj",
+        "packagesPath": "C:\\Users\\arima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AnhKim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
