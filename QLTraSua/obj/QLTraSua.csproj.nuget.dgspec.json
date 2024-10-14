@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj": {}
+    "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj": {
+    "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj",
+        "projectUniqueName": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
         "projectName": "QLTraSua",
-        "projectPath": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\QLTraSua.csproj",
-        "packagesPath": "C:\\Users\\arima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arima\\OneDrive\\Máy tính\\BTL\\EB\\QLTraSua\\obj\\",
+        "projectPath": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\arima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
