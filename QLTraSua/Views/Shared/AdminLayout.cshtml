@@ -7,32 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>ToCoToCo - Danh mục sản phẩm</title>
-    <link href="https://dongphucbonmua.com/wp-content/uploads/2021/09/dong-phuc-tocotoco-3-min.jpg" rel="icon" type="">
+    <title>Dashboard - Admin</title>
     <link href="~/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body class="sb-nav-fixed">
     <!-- Begin Top nav -->
-        <partial name="TopNav" />
+    <partial name="AdminTopNav" />
     <!-- End Top nav -->
-    <div id="layoutSidenav" class="order-content">
+    <div id="layoutSidenav">
         <!-- Begin Left menu -->
-            <partial name="LeftMenu" />
+        <partial name="AdminLeftMenu" />
         <!-- End Left menu -->
         <!-- Begin Right content -->
         <div id="layoutSidenav_content">
             <!-- Begin Main -->
-               <main>
-                   @RenderBody()
-               </main> 
+            <main>
+                @RenderBody()
+            </main>
             <!-- End Main -->
             <!-- Begin Footer -->
-               <partial name="Footer" />
+            <partial name="AdminFooter" />
             <!-- End Footer -->
         </div>
-            <partial name="RightMenu" />
         <!-- End Right content -->
     </div>
 
