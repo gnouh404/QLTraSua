@@ -23,7 +23,7 @@ namespace QLTraSua.Models
         public int TotalAmount { get; set; }
 
         [Column("status")]
-        public Boolean Status { get; set; }
+        public bool? Status { get; set; }
 
         [ForeignKey("User")]
         [Column("user_id")]

@@ -11,16 +11,16 @@ namespace QLTraSua.Models
             ProductCarts = new List<ProductCart>();
             OrderDetails = new List<OrderDetails>();
         }
+
         [Key]
         [Column("product_id")]
-        public int ProductID;
+        public int ProductID { get; set; }
 
         [Column("product_name")]
-        
         public string ProductName {  get; set; }
 
         [Column("price")]
-        public double ProductPrice { get; set; }
+        public decimal ProductPrice { get; set; }
 
         [Column("image_url")]
         public string ImageUrl { get; set; }

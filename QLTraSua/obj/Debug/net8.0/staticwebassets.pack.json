@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\wwwroot\\css\\user-style.css",
+      "PackagePath": "staticwebassets\\css\\user-style.css"
+    },
+    {
       "Id": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

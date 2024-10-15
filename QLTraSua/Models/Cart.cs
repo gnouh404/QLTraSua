@@ -19,7 +19,7 @@ namespace QLTraSua.Models
         public int CartQuantity { get; set; }
 
         [Column("total_price")]
-        public double TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
 
         [ForeignKey("User")]
         [Column("user_id")]

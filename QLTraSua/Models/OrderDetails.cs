@@ -2,6 +2,7 @@
 
 namespace QLTraSua.Models
 {
+    [Table("order_details")]
     public class OrderDetails
     {
 

@@ -18,7 +18,7 @@ namespace QLTraSua.Models
         public string ToppingName { get; set; }
 
         [Column("price")]
-        public double ToppingPrice {  get; set; }
+        public decimal ToppingPrice {  get; set; }
 
         public virtual ICollection<ProductTopping> ProductToppings { get; set; }
     }

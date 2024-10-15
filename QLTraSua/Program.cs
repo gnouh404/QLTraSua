@@ -1,9 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using QLTraSua.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<QLTraSuaContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("QLTraSuaContext"))
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

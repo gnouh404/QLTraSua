@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8vimPM/BkOGuUpzT2l0dK87D/xlJOoMpnB2HOs/L+cI=",
+  "Hash": "ILNiGzcDTEZGAmsgV65N4iOQHA1Vmbpk1lHmNH0CfiM=",
   "Source": "QLTraSua",
   "BasePath": "_content/QLTraSua",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\wwwroot\\css\\user-style.css",
+      "SourceId": "QLTraSua",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\wwwroot\\",
+      "BasePath": "_content/QLTraSua",
+      "RelativePath": "css/user-style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\user-style.css"
     },
     {
       "Identity": "D:\\InClass\\LTWeb\\QLTraSua\\QLTraSua\\wwwroot\\favicon.ico",
