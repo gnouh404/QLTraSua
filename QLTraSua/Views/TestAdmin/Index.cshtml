@@ -21,7 +21,7 @@
                         <td>@p.ProductName</td>
                         <td>@p.ProductPrice</td>
                         <td>@p.Category.CategoryName</td>
-                        <td><a href="@p.ImageUrl">Click vào đây</a></td>
+                        <td><a href="@p.ImageUrl" target="_blank">Click vào đây</a></td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@p.ProductID">Edit</a>|<a asp-action="Delete"
                                                                                          asp-route-id="@p.ProductID">Delete</a>
