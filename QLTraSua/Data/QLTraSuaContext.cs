@@ -83,8 +83,29 @@ namespace QLTraSua.Data
             .WithOne(c => c.User)     // Mỗi Cart thuộc về một User
             .HasForeignKey<Cart>(c => c.UserID);
         }
+        public void Seed()
+        {
+            //var categories = Categories.ToList();
+            //Categories.RemoveRange(categories);
+            //SaveChanges();
 
-        
-        
-}
+            if (!Categories.Any())
+            {
+                var newCategories = new List<Category>
+            {
+                new Category { CategoryName = "Món Nổi Bật" },
+                new Category { CategoryName = "Instant Milk Tea" },
+                new Category { CategoryName = "Trà Sữa" },
+                new Category { CategoryName = "Fresh Fruit Tea" },
+                new Category { CategoryName = "Macchiato Cream Cheese" },
+                new Category { CategoryName = "Cà Phê" },
+                new Category { CategoryName = "Ice Cream" },
+                new Category { CategoryName = "Special Menu" }
+            };
+
+                Categories.AddRange(newCategories);
+                SaveChanges();
+            }
+        }
+    }
 }

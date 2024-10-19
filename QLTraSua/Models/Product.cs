@@ -17,21 +17,24 @@ namespace QLTraSua.Models
         public int ProductID { get; set; }
 
         [Column("product_name")]
+        [Display(Name = "Tên sản phẩm")]
         public string ProductName {  get; set; }
 
         [Column("price")]
+        [Display(Name = "Giá")]
         public decimal ProductPrice { get; set; }
 
         [Column("image_url")]
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
 
         [ForeignKey("Category")]
         [Column("category_id")]
+        [Display(Name = "Thể loại")]
         public int CategoryID { get; set; }
 
 
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
 
         public virtual ICollection<ProductTopping> ProductToppings { get; set; }
 

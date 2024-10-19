@@ -5,8 +5,7 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:QLTraSuaContext",
-      "dynamicId": null
+      "connectionId": "ConnectionStrings:QLTraSuaContext"
     }
   }
 }
