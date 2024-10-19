@@ -17,17 +17,8 @@
     <!-- Begin Top nav -->
     <partial name="UserTopNav" />
     <!-- End Top nav -->
-    <div id="layoutSidenav" class="order-content">
-        <!-- Begin Left Menu -->
-        <partial name="UserLeftMenu" />
-        <!-- End Left Menu-->
-        <main>
-            @RenderBody()
-        </main>
-        <!-- Begin Right Menu -->
-        <partial name="UserRightMenu" />
-        <!-- End Right Menu-->
-    </div>
-
+    <main>
+        @RenderBody()
+    </main>
 </body>
 </html>

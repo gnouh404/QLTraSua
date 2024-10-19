@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/UserPaymentLayout.cshtml";
+
+
+}
+<div class="page-checkout">
+    <div class="checkout-top">
+        <div class="left">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        </div>
+        <div class="center">Thanh toán</div>
+        <div class="right"></div>
+    </div>
+    <div class="tabbar-header-checkout">
+        <div class="btn-tabar-checkout active" type="DELI" id="btn-deli">Giao hàng tận nơi</div>
+        <div class="btn-tabar-checkout" type="PICK" id="btn-pick">Nhận tại cửa hàng</div>
+    </div>
+    <div class="checkout-detail">
+        <div class="checkout-detail-left">
+            <div class="delivery-info">
+                <div class="delivery-info-title">
+                    <div class="delivery-info-title-left">Thông tin giao hàng</div>
+                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                </div>
+                <div class="delivery-info-content">
+                    <div class="wrap-input">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" id="customer-name" placeholder="Tên người nhận">
+                    </div>
+                    <div class="wrap-input">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <input type="text" id="customer-phone" placeholder="Số điện thoại người nhận" maxlength="10">
+                    </div>
+                    <div class="delivery-location">
+                        <div class="delivery-location-title" id="delivery-title">Giao đến</div>
+                        <div class="wrap-input wrap-location">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <input type="text" id="customer-location" placeholder="Địa chỉ người nhận">
+                        </div>
+                        <div class="wrap-input wrap-input-note" id="input-note">
+                            <i class="fas fa-sticky-note" aria-hidden="true"></i>
+                            <input type="text" id="customer-note" placeholder="Ghi chú địa chỉ...">
+                        </div>
+                        <div id="map-checkout"></div>
+                    </div>
+                    <div class="delivery-datetime">
+                        <div class="left">Giao hàng <span class="time"><span class="hour">15</span>:<span class="minute">40</span></span> - hôm nay <span class="date">19/10/2024</span></div>
+                        <div class="right edit-delivery-datetime">Sửa</div>
+                    </div>
+                </div>
+            </div>
+            <div class="delivery-info payment-method">
+                <div class="delivery-info-title">
+                    <div class="delivery-info-title-left">Phương thức thanh toán</div>
+                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                </div>
+                <div class="delivery-info-content">
+                    <label class="container-radio cod-payment">
+                        <span>Thanh toán khi nhận hàng</span>
+                        <input checked="" type="radio" name="type" value="cold">
+                        <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio momo-payment">
+                        <span>Thanh toán qua Ví MoMo</span>
+                        <input type="radio" name="type" value="momo">
+                        <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio vnpay-payment" hidden="">
+                        <span>Thanh toán qua Ví VNPAY</span>
+                        <input type="radio" name="type" value="vnpay">
+                        <span class="checkmark-radio"></span>
+                    </label>
+                    <div class="form-group ml-4 children-vnpay">
+                        <label class="container-radio">
+                            <span>Cổng thanh toán VNPAYQR</span>
+                            <input type="radio" checked="True" id="bankCode" name="bankCode" value="">
+                            <span class="checkmark-radio"></span>
+                        </label>
+                        <label class="container-radio ">
+                            <span>Thanh toán bằng ứng dụng hỗ trợ VNPAYQR</span>
+                            <input type="radio" id="bankCode" name="bankCode" value="VNPAYQR">
+                            <span class="checkmark-radio"></span>
+                        </label>
+                        <label class="container-radio">
+                            <span>Thanh toán qua thẻ ATM/Tài khoản nội địa</span>
+                            <input type="radio" id="bankCode" name="bankCode" value="VNBANK">
+                            <span class="checkmark-radio"></span>
+                        </label>
+                        <label class="container-radio">
+                            <span>Thanh toán qua thẻ quốc tế</span>
+                            <input type="radio" id="bankCode" name="bankCode" value="INTCARD">
+                            <span class="checkmark-radio"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout-detail-right">
+            <div class="delivery-info order-info">
+                <div class="delivery-info-title">
+                    <div class="delivery-info-title-left">Thông tin đơn hàng</div>
+                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                </div>
+                <div class="delivery-info-content">
+                    <div class="choose-store">
+                        <div class="choose-store-title">Chọn cửa hàng</div>
+                        <div class="choose-store-content">
+                            <div class="left">
+                                <i class="fas fa-store" aria-hidden="true"></i>
+                                <div class="store-name"></div>
+                            </div>
+                            <div class="right">
+                                <div class="distance"></div>
+                                <input type="hidden" name="distance">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-checkout">
+                        <div class="product-checkout">
+                            <img src="https://tocotocotea.com/wp-content/uploads/2024/10/O-Long-Yen-Mach.png" alt="">
+                            <div class="product-checkout-content">
+                                <div class="title">Ô Long Yến Mạch (M)</div>
+                                <div class="customizations">100% đường,100% đá,</div>
+                                <div class="quantity">25.000đ x 1 = 25.000đ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promotion-code">
+                        <div class="left">
+                            <img src="https://tocotocotea.com/wp-content/themes/tocotocotea/assets/images/icon-promotion.png" alt="" class="promotion-icon">
+                            <div class="text">Mã khuyến mại</div>
+                        </div>
+                        <div class="right">
+                            <div class="btn-add-voucher">
+                                Thêm khuyến mại
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-price">
+                        <div class="price-top">
+                            <div class="quantity">Số lượng cốc: <span class="quanity-number">1</span> cốc</div>
+                            <div class="total">
+                                <span class="total-title">Tổng:</span>
+                                <div class="txt-right total-number">25.000đ</div>
+                            </div>
+                        </div>
+                        <div class="transport-price">
+                            <div class="transport-price-title">Phí vận chuyển:</div>
+                            <div class="txt-right">0đ</div>
+                        </div>
+                        <div class="promotion-amount">
+                            <div class="promotion-amount-title">Khuyến mãi:</div>
+                            <div class="txt-right">0đ</div>
+                        </div>
+                        <div class="grand-total">
+                            <div class="grand-total-title">Tổng cộng:</div>
+                            <div class="txt-right grand-total-number">25.000đ</div>
+                        </div>
+                    </div>
+                    <div class="checkout-note">
+                        <textarea type="text" placeholder="Thêm ghi chú..." class="ta-checkout-note"></textarea>
+                    </div>
+                    <div class="wrap-checkout-btn">
+                        <div class="btn-order">ĐẶT HÀNG</div>
+                        <div class="btn-back-to-menu">TIẾP TỤC MUA HÀNG</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const btnPick = document.getElementById("btn-pick");
+    const btnDeli = document.getElementById("btn-deli");
+    const inputNote = document.getElementById("input-note");
+    const deliveryTitle = document.getElementById("delivery-title");
+
+    btnPick.addEventListener("click", function () {
+        inputNote.style.display = "none"; // Ẩn ghi chú
+        deliveryTitle.innerText = "Địa điểm nhận"; // Đổi tiêu đề
+    });
+
+    btnDeli.addEventListener("click", function () {
+        inputNote.style.display = "block"; // Hiện ghi chú
+        deliveryTitle.innerText = "Giao đến"; // Đổi lại tiêu đề
+    });
+</script>

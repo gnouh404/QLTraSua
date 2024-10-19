@@ -8,5 +8,10 @@ namespace QLTraSua.Controllers
         {
             return View();
         }
+
+        public IActionResult Payment()
+        {
+            return View();
+        }
     }
 }
