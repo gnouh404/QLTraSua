@@ -186,4 +186,10 @@
         inputNote.style.display = "block"; // Hiện ghi chú
         deliveryTitle.innerText = "Giao đến"; // Đổi lại tiêu đề
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const button = document.querySelector('.login-button .btn');
+        button.innerHTML = '<i class="fa-regular fa-user"></i>'; // Thay đổi nội dung nút
+    });
+
 </script>
