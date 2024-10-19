@@ -9,75 +9,80 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QLTraSua
 build_property.RootNamespace = QLTraSua
-build_property.ProjectDir = D:\InClass\LTWeb\QLTraSua\QLTraSua\
+build_property.ProjectDir = D:\Workspace\source\repos\QLTraSua\QLTraSua\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\InClass\LTWeb\QLTraSua\QLTraSua
+build_property.MSBuildProjectDirectory = D:\Workspace\source\repos\QLTraSua\QLTraSua
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Home/Index.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Home/Privacy.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/AdminFooter.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/AdminFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/AdminLayout.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/AdminLeftMenu.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/AdminLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGVmdE1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/AdminTopNav.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/AdminTopNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluVG9wTmF2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/Error.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/Main.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1haW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserFooter.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/UserFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJGb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserLayout.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/UserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserLeftMenu.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/UserLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJMZWZ0TWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserPaymentLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJQYXltZW50TGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserRightMenu.cshtml]
+=======
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/UserRightMenu.cshtml]
+>>>>>>> 49f8a38cb3f1c564c9ea9823f88bc78ff2f4b5b4
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJSaWdodE1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/UserTopNav.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/UserTopNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJUb3BOYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/TestAdmin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -91,25 +96,44 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/TestAdmin/Index.cshtml]
+=======
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/TestAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/TestAdmin/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/TestAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/TestAdmin/Index.cshtml]
+>>>>>>> 49f8a38cb3f1c564c9ea9823f88bc78ff2f4b5b4
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Test/Index.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Test/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/_ViewImports.cshtml]
+=======
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/_ViewImports.cshtml]
+>>>>>>> 49f8a38cb3f1c564c9ea9823f88bc78ff2f4b5b4
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/_ViewStart.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/InClass/LTWeb/QLTraSua/QLTraSua/Views/Shared/_Layout.cshtml]
+[D:/Workspace/source/repos/QLTraSua/QLTraSua/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-117u2bpuog
