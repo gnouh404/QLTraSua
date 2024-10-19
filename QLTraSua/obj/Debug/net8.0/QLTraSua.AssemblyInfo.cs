@@ -15,11 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLTraSua")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4e738ade4e4eeeebd51e57ccd86cf1f9d4bca4d")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c9bb2da48de83c0a4183952ce0b9a1deb2c7e26")]
->>>>>>> 49f8a38cb3f1c564c9ea9823f88bc78ff2f4b5b4
 [assembly: System.Reflection.AssemblyProductAttribute("QLTraSua")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLTraSua")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
