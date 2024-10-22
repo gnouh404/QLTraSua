@@ -85,9 +85,9 @@ namespace QLTraSua.Data
         }
         public void Seed()
         {
-            //var categories = Categories.ToList();
-            //Categories.RemoveRange(categories);
-            //SaveChanges();
+            var categories = Categories.ToList();
+            Categories.RemoveRange(categories);
+            SaveChanges();
 
             if (!Categories.Any())
             {
