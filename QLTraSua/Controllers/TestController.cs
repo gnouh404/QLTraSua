@@ -14,13 +14,5 @@ namespace QLTraSua.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult Register() { 
-            return View();
-        }
     }
 }
