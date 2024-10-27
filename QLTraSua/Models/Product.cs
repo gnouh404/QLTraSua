@@ -6,8 +6,8 @@ namespace QLTraSua.Models
     [Table("products")]
     public class Product
     {
-        public Product() { 
-            ProductToppings = new List<ProductTopping>();
+        public Product()
+        {
             ProductCarts = new List<ProductCart>();
             OrderDetails = new List<OrderDetails>();
         }
@@ -18,7 +18,7 @@ namespace QLTraSua.Models
 
         [Column("product_name")]
         [Display(Name = "Tên sản phẩm")]
-        public string ProductName {  get; set; }
+        public string ProductName { get; set; }
 
         [Column("price")]
         [Display(Name = "Giá")]
@@ -34,9 +34,7 @@ namespace QLTraSua.Models
         public int CategoryID { get; set; }
 
 
-        public virtual Category? Category { get; set; }
-
-        public virtual ICollection<ProductTopping> ProductToppings { get; set; }
+        public virtual Category Category { get; set; }
 
         public virtual ICollection<ProductCart> ProductCarts { get; set; }
 

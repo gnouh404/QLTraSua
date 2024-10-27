@@ -8,28 +8,13 @@ namespace QLTraSua.Data
         public QLTraSuaContext(DbContextOptions<QLTraSuaContext> options):base(options) { }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Topping> Toppings { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
-        public virtual DbSet<ProductTopping> ProductToppings { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ProductCart> ProductCarts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProductTopping>()
-                .HasKey(pt => new { pt.ProductID, pt.ToppingID });
-
-        // config relationship between products and topping
-            modelBuilder.Entity<ProductTopping>()
-            .HasOne(pt => pt.Product)
-            .WithMany(p => p.ProductToppings)
-            .HasForeignKey(pt => pt.ProductID);
-
-            modelBuilder.Entity<ProductTopping>()
-                .HasOne(pt => pt.Topping)
-                .WithMany(t => t.ProductToppings)
-                .HasForeignKey(pt => pt.ToppingID);
 
         // products and categories
             modelBuilder.Entity<Product>()
@@ -85,10 +70,7 @@ namespace QLTraSua.Data
         }
         public void Seed()
         {
-            var categories = Categories.ToList();
-            Categories.RemoveRange(categories);
-            SaveChanges();
-
+            
             if (!Categories.Any())
             {
                 var newCategories = new List<Category>

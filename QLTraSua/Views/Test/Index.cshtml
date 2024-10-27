@@ -4,6 +4,7 @@
 
 
 }
+@model IEnumerable<Product>
 <div id="layoutSidenav_content">
     <div id="layoutSidenav_nav" style="width: 530px;">
         <div class="order-center">
@@ -19,1414 +20,130 @@
               </div>
             </div> -->
             <div class="main-center">
-                <div class="category" catslug="mon-noi-bat">
-                    <div class="category-name">
-                        <div class="left">Món Nổi Bật</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                @foreach (string category in new[] { "Món Nổi Bật", "Instant Milk Tea", "Fresh Fruit Tea",
+                "Macchiato Cream Cheese", "Trà Sữa", "Cà Phê", "Ice Cream", "Special Menu"
+                })
+                {
+                    string input = category.ToLower();
+
+                    input = input.Replace("à", "a")
+                    .Replace("á", "a")
+                    .Replace("ả", "a")
+                    .Replace("ã", "a")
+                    .Replace("ạ", "a")
+                    .Replace("â", "a")
+                    .Replace("ầ", "a")
+                    .Replace("ấ", "a")
+                    .Replace("ẩ", "a")
+                    .Replace("ẫ", "a")
+                    .Replace("ậ", "a")
+                    .Replace("ê", "e")
+                    .Replace("ề", "e")
+                    .Replace("ế", "e")
+                    .Replace("ể", "e")
+                    .Replace("ễ", "e")
+                    .Replace("ệ", "e")
+                    .Replace("ù", "u")
+                    .Replace("ú", "u")
+                    .Replace("ủ", "u")
+                    .Replace("ũ", "u")
+                    .Replace("ụ", "u")
+                    .Replace("ư", "u")
+                    .Replace("ừ", "u")
+                    .Replace("ứ", "u")
+                    .Replace("ử", "u")
+                    .Replace("ữ", "u")
+                    .Replace("ự", "u");
+
+                    // Tạo một chuỗi mới để chứa kết quả
+                    string result = string.Empty;
+
+                    // Duyệt qua từng ký tự trong chuỗi
+                    foreach (char c in input)
+                    {
+                        if (c == ' ')
+                        {
+                            // Nếu gặp khoảng trắng, thêm dấu '-' vào kết quả
+                            result += '-';
+                        }
+                        else if (char.IsLetter(c)) // Chỉ thêm ký tự chữ cái
+                        {
+                            result += c;
+                        }
+                    }
+                    <div class="category" catslug="@result">
+                        <div class="category-name">
+
+                            <div class="left">@category</div>
+
+                            <div class="right">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-product">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="355835" default_variation_id="355836">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/09/z5849639195288_ab6be655af86d11d4dd5f446031cb465.jpg" alt="">
-                                <div class="product-name">Thạch Đào Tiên - Peach Jelly</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        48,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354691" default_variation_id="354692">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Kem-Vani-Tra-Sua-Tran-Chau-Hoang-Kim.png" alt="">
-                                <div class="product-name">Kem Vani Trà Sữa Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354687" default_variation_id="354688">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Kem-Tra-Sua-Tran-Chau-Hoang-Kim.png" alt="">
-                                <div class="product-name">Kem Trà Sữa Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354681" default_variation_id="354682">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/O-long-dao-le-tay-bac-khong-lo.png" alt="">
-                                <div class="product-name">Ô Long Đào Lê Tây Bắc Khổng Lồ - 1000ml</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354677" default_variation_id="354678">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Xanh-Nhai-Le-Tay-Bac-Khong-Lo.png" alt="">
-                                <div class="product-name">Xanh Nhài Lê Tây Bắc Khổng Lồ - 1000ml</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354669" default_variation_id="354670">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/O-Long-Dao-Le-Tay-Bac.png" alt="">
-                                <div class="product-name">Ô Long Đào Lê Tây Bắc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354657" default_variation_id="354658">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Xanh-Nhai-Le-Tay-Bac.png" alt="">
-                                <div class="product-name">Xanh Nhài Lê Tây Bắc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354654" default_variation_id="354656">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Tra-Sua-BoBa-Cheese.png" alt="">
-                                <div class="product-name">Trà Sữa Boba Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350472" default_variation_id="350474">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Mang-Cau.png" alt="">
-                                <div class="product-name">Xanh nhài mãng cầu</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350467" default_variation_id="350469">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Phe-Tra-Chanh-Vang.png" alt="">
-                                <div class="product-name">Phê Trà Chanh Vàng</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350462" default_variation_id="350464">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Xoai-Bang-Tuyet.png" alt="">
-                                <div class="product-name">Xanh Nhài Xoài Băng Tuyết</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350456" default_variation_id="350457">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Mang-Cau-Xoai.png" alt="">
-                                <div class="product-name">Xanh Nhài Mãng Cầu Xoài</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        36,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350451" default_variation_id="350452">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="">
-                                <div class="product-name">Xanh Nhài Sữa Dừa Phô Mai Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350444" default_variation_id="350445">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Toco_Tea.png" alt="">
-                                <div class="product-name">Xanh Nhài Sữa Tươi Toco</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347580" default_variation_id="347581">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-tuoi.png" alt="">
-                                <div class="product-name">Ô Long Sữa Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347573" default_variation_id="347574">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Oolong-Dao-Que-Hoa-Kem-Cheese.png" alt="">
-                                <div class="product-name">Ô Long Đào Quế Hoa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347569" default_variation_id="347570">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/phe-sua-kem-cheese.png" alt="">
-                                <div class="product-name">Phê Sữa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347564" default_variation_id="347565">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-kem-cafe-tran-chau-soi.png" alt="">
-                                <div class="product-name">Ô Long Sữa Kem Café Trân Châu Sợi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347528" default_variation_id="347529">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Tra-Xanh-Dao-Que-Hoa.png" alt="">
-                                <div class="product-name">Trà Xanh Nhài Đào Tiên</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347500" default_variation_id="347501">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Tra-Dao-Tien-Que-Hoa-1.png" alt="">
-                                <div class="product-name">Trà Đào Tiên Quế Hoa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="342093" default_variation_id="342094">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/01/z5200313014176_88115b1d87eae335d18ada8210389e0d.jpg" alt="">
-                                <div class="product-name">Ô Long Tuyết Lê Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="339079" default_variation_id="339080">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/12/z4967287161207_d582f10a876bcc7359666df4f2ec76c5.jpg" alt="">
-                                <div class="product-name">Trà Chanh Mật Ong Giã Tay Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        43,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="338072" default_variation_id="338076">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/11/z4925614520640_1babe5daea83472f4784ceb3cd206979.jpg" alt="">
-                                <div class="product-name">Trà Chanh Mật Ong Giã Tay</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="338058" default_variation_id="338059">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/11/z4925614515113_5bdf67d7e4b3ee98215ea11da9b303e9.jpg" alt="">
-                                <div class="product-name">Ô Long Sữa Trân Châu Ngũ Cốc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        35,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="333953" default_variation_id="333954">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/10/z4853951474939_d2f4544ce4706979c9779d466a8efc5e.jpg" alt="">
-                                <div class="product-name">Sữa Tươi Trân Châu Đường Hổ Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="332910" default_variation_id="332911">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/09/z4704498631032_4dc66b5cea996f0c14840a46043f161c.jpg" alt="">
-                                <div class="product-name">Người Bạn Xanh Sữa Nhài Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="329197" default_variation_id="329198">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/08/z4617754537982_689908f83d0785da485d70d0307e5130.jpg" alt="">
-                                <div class="product-name">Kem Ly Vani Dâu</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325788" default_variation_id="325789">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/07/9501a1967827a879f136.jpg" alt="">
-                                <div class="product-name">Cà Phê Đen Đá</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        18,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325785" default_variation_id="325786">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/07/170b2e9cf72d27737e3c.jpg" alt="">
-                                <div class="product-name">Cà Phê Sữa Đá</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        18,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325024" default_variation_id="325025">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/CF-Kem-Tran-Chau-HK.jpg" alt="">
-                                <div class="product-name">Cafe Kem Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325020" default_variation_id="325021">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/kem-tran-chau-hoang-kim.jpg" alt="">
-                                <div class="product-name">Kem Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="318053" default_variation_id="318054">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/O-Long-Man-Kem-Pho-Mai.jpg" alt="">
-                                <div class="product-name">Ô Long Mận Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="313713" default_variation_id="313714">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/04/tra-sua-tran-chau-duong-den.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Đường Hổ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        33,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="299713" default_variation_id="299714">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/01/Tra-sua-pho-mai-tuoi.png" alt="">
-                                <div class="product-name">Trà Sữa Phô Mai Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="279430" default_variation_id="279431">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2022/10/tra-man.jpg" alt="">
-                                <div class="product-name">Ô Long Mận Mộc Châu Thạch Quế Hoa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        36,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="13125" default_variation_id="13126">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/11/Jelly-coffee.jpg" alt="">
-                                <div class="product-name">Jelly Milk Coffee</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="13121" default_variation_id="13122">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/11/cheese-milk-coffee.png" alt="">
-                                <div class="product-name">Cheese Milk Coffee</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1131" default_variation_id="1132">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/06/TS_TIGER_SUGAR.jpg" alt="">
-                                <div class="product-name">Tiger Sugar</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1039" default_variation_id="1041">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Tran-Chau-Hoang-Gia-1-copy.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Hoàng Gia</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1044" default_variation_id="1046">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/ba-anh-em.jpg" alt="">
-                                <div class="product-name">Trà Sữa Ba Anh Em</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        39,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1011" default_variation_id="1013">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/tra-sua-tran-chau-soi.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Sợi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        39,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1019" default_variation_id="1021">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Okinawa_Moi.png" alt="">
-                                <div class="product-name">Trà Sữa Kim Cương Đen Okinawa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1128" default_variation_id="1129">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/oolong-kem-pho-mai_75e8d3f11fb3402196416da77c8ff33a_grande.png" alt="">
-                                <div class="product-name">Ô Long Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1134" default_variation_id="1135">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/dau-tam-kem-pho-mai.png" alt="">
-                                <div class="product-name">Dâu Tằm Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1140" default_variation_id="1142">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/tra-dua.jpg" alt="">
-                                <div class="product-name">Trà Dứa Thạch Konjac</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
+                        <div class="list-product" style="display:block;">
+                            <div class="list-product-flex">
+                                @foreach (var product in Model)
+                                {
+
+                                    if (string.Equals(product.Category.CategoryName.Trim(), category.Trim(), StringComparison.OrdinalIgnoreCase))
+                                    {
+
+                                        <div class="product" product_id="@product.ProductID">
+                                            <div class="tags">
+                                            </div>
+                                            <img src="@product.ImageUrl" alt="">
+                                            <div class="product-name">@product.ProductName</div>
+                                            <div class="product-price">
+                                                <p class="product-origin-price">
+                                                    @product.ProductPrice.ToString("N0") VND
+                                                </p>
+                                            </div>
+                                            <button type="button" class="btn-increase"
+                                                    onclick="loadProductDetails(@product.ProductID, '@product.ProductName', @product.ProductPrice, '@product.ImageUrl')">
+                                                +
+                                            </button>
+                                        </div>
+                                    }
+
+                                }
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="category" catslug="instant-milk-tea">
-                    <div class="category-name">
-                        <div class="left">Instant Milk Tea</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product" style="display: none;">
-                        <div class="list-product-flex"></div>
-                    </div>
-                </div>
-                <div class="category" catslug="fresh-fruit-tea">
-                    <div class="category-name">
-                        <div class="left">Fresh Fruit Tea</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product" style="display: none;">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="347528" default_variation_id="347529">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Tra-Xanh-Dao-Que-Hoa.png" alt="">
-                                <div class="product-name">Trà Xanh Nhài Đào Tiên</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347500" default_variation_id="347501">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Tra-Dao-Tien-Que-Hoa-1.png" alt="">
-                                <div class="product-name">Trà Đào Tiên Quế Hoa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="342093" default_variation_id="342094">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/01/z5200313014176_88115b1d87eae335d18ada8210389e0d.jpg" alt="">
-                                <div class="product-name">Ô Long Tuyết Lê Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="339079" default_variation_id="339080">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/12/z4967287161207_d582f10a876bcc7359666df4f2ec76c5.jpg" alt="">
-                                <div class="product-name">Trà Chanh Mật Ong Giã Tay Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        43,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="338072" default_variation_id="338076">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/11/z4925614520640_1babe5daea83472f4784ceb3cd206979.jpg" alt="">
-                                <div class="product-name">Trà Chanh Mật Ong Giã Tay</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="279430" default_variation_id="279431">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2022/10/tra-man.jpg" alt="">
-                                <div class="product-name">Ô Long Mận Mộc Châu Thạch Quế Hoa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        36,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1137" default_variation_id="1138">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Dau-Tam-Pha-Le-Tuyet-2-copy.jpg" alt="">
-                                <div class="product-name">Trà dâu tằm pha lê tuyết</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1140" default_variation_id="1142">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/tra-dua.jpg" alt="">
-                                <div class="product-name">Trà Dứa Thạch Konjac</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category" catslug="macchiato-cream-cheese">
-                    <div class="category-name">
-                        <div class="left">Macchiato Cream Cheese</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product" style="display: none;">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="347573" default_variation_id="347574">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Oolong-Dao-Que-Hoa-Kem-Cheese.png" alt="">
-                                <div class="product-name">Ô Long Đào Quế Hoa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347569" default_variation_id="347570">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/phe-sua-kem-cheese.png" alt="">
-                                <div class="product-name">Phê Sữa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347564" default_variation_id="347565">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-kem-cafe-tran-chau-soi.png" alt="">
-                                <div class="product-name">Ô Long Sữa Kem Café Trân Châu Sợi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="318053" default_variation_id="318054">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/O-Long-Man-Kem-Pho-Mai.jpg" alt="">
-                                <div class="product-name">Ô Long Mận Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1134" default_variation_id="1135">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/dau-tam-kem-pho-mai.png" alt="">
-                                <div class="product-name">Dâu Tằm Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1128" default_variation_id="1129">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/oolong-kem-pho-mai_75e8d3f11fb3402196416da77c8ff33a_grande.png" alt="">
-                                <div class="product-name">Ô Long Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1105" default_variation_id="1106">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Hong-Tra-Kem-Pho-Mai-2-copy.jpg" alt="">
-                                <div class="product-name">Hồng Trà Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1108" default_variation_id="1110">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Xanh-Kem-Pho-Mai-2-copy.jpg" alt="">
-                                <div class="product-name">Trà Xanh Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category" catslug="tra-sua">
-                    <div class="category-name">
-                        <div class="left">Trà Sữa</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product" style="">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="354669" default_variation_id="354670">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/O-Long-Dao-Le-Tay-Bac.png" alt="">
-                                <div class="product-name">Ô Long Đào Lê Tây Bắc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354657" default_variation_id="354658">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Xanh-Nhai-Le-Tay-Bac.png" alt="">
-                                <div class="product-name">Xanh Nhài Lê Tây Bắc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354654" default_variation_id="354656">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Tra-Sua-BoBa-Cheese.png" alt="">
-                                <div class="product-name">Trà Sữa Boba Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="338058" default_variation_id="338059">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/11/z4925614515113_5bdf67d7e4b3ee98215ea11da9b303e9.jpg" alt="">
-                                <div class="product-name">Ô Long Sữa Trân Châu Ngũ Cốc</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        35,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="333953" default_variation_id="333954">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/10/z4853951474939_d2f4544ce4706979c9779d466a8efc5e.jpg" alt="">
-                                <div class="product-name">Sữa Tươi Trân Châu Đường Hổ Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="332910" default_variation_id="332911">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/09/z4704498631032_4dc66b5cea996f0c14840a46043f161c.jpg" alt="">
-                                <div class="product-name">Người Bạn Xanh Sữa Nhài Khổng Lồ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        45,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="313713" default_variation_id="313714">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/04/tra-sua-tran-chau-duong-den.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Đường Hổ</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        33,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="299713" default_variation_id="299714">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/01/Tra-sua-pho-mai-tuoi.png" alt="">
-                                <div class="product-name">Trà Sữa Phô Mai Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        40,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1131" default_variation_id="1132">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/06/TS_TIGER_SUGAR.jpg" alt="">
-                                <div class="product-name">Tiger Sugar</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1039" default_variation_id="1041">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Tran-Chau-Hoang-Gia-1-copy.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Hoàng Gia</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1044" default_variation_id="1046">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/ba-anh-em.jpg" alt="">
-                                <div class="product-name">Trà Sữa Ba Anh Em</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        39,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1011" default_variation_id="1013">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/tra-sua-tran-chau-soi.jpg" alt="">
-                                <div class="product-name">Trà Sữa Trân Châu Sợi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        39,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1019" default_variation_id="1021">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Okinawa_Moi.png" alt="">
-                                <div class="product-name">Trà Sữa Kim Cương Đen Okinawa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1049" default_variation_id="1051">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Xanh-Sua-Vi-Nhai-1-copy-1.jpg" alt="">
-                                <div class="product-name">Trà Xanh Sữa Vị Nhài</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        33,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1064" default_variation_id="1066">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-O-Long-Sua-2-copy.jpg" alt="">
-                                <div class="product-name">Trà Sữa Ô Long</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        34,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1024" default_variation_id="1026">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Socola-1-copy.jpg" alt="">
-                                <div class="product-name">Trà Sữa Socola</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        35,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1034" default_variation_id="1036">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-Dau-Tay-2-copy.jpg" alt="">
-                                <div class="product-name">Trà sữa dâu tây</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        34,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1001" default_variation_id="1003">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/Tra-Sua-1-copy.jpg" alt="">
-                                <div class="product-name">Trà sữa</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        33,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category" catslug="special-drink">
-                    <div class="category-name">
-                        <div class="left">Cà Phê</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="325788" default_variation_id="325789">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/07/9501a1967827a879f136.jpg" alt="">
-                                <div class="product-name">Cà Phê Đen Đá</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        18,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325785" default_variation_id="325786">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/07/170b2e9cf72d27737e3c.jpg" alt="">
-                                <div class="product-name">Cà Phê Sữa Đá</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        18,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="13125" default_variation_id="13126">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/11/Jelly-coffee.jpg" alt="">
-                                <div class="product-name">Jelly Milk Coffee</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="13121" default_variation_id="13122">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/11/cheese-milk-coffee.png" alt="">
-                                <div class="product-name">Cheese Milk Coffee</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                    <p class="product-sale-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category" catslug="ice-cream">
-                    <div class="category-name">
-                        <div class="left">Ice Cream</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="354691" default_variation_id="354692">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Kem-Vani-Tra-Sua-Tran-Chau-Hoang-Kim.png" alt="">
-                                <div class="product-name">Kem Vani Trà Sữa Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="354687" default_variation_id="354688">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/08/Kem-Tra-Sua-Tran-Chau-Hoang-Kim.png" alt="">
-                                <div class="product-name">Kem Trà Sữa Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="329197" default_variation_id="329198">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/08/z4617754537982_689908f83d0785da485d70d0307e5130.jpg" alt="">
-                                <div class="product-name">Kem Ly Vani Dâu</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325024" default_variation_id="325025">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/CF-Kem-Tran-Chau-HK.jpg" alt="">
-                                <div class="product-name">Cafe Kem Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="325020" default_variation_id="325021">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2023/05/kem-tran-chau-hoang-kim.jpg" alt="">
-                                <div class="product-name">Kem Trân Châu Hoàng Kim</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        25,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category" catslug="special-menu">
-                    <div class="category-name">
-                        <div class="left">Special Menu</div>
-                        <div class="right">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="list-product" style="">
-                        <div class="list-product-flex">
-                            <div class="product" product_id="350456" default_variation_id="350457">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Mang-Cau-Xoai.png" alt="">
-                                <div class="product-name">Xanh Nhài Mãng Cầu Xoài</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        36,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350451" default_variation_id="350452">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="">
-                                <div class="product-name">Xanh Nhài Sữa Dừa Phô Mai Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="350444" default_variation_id="350445">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Toco_Tea.png" alt="">
-                                <div class="product-name">Xanh Nhài Sữa Tươi Toco</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        30,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347580" default_variation_id="347581">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-tuoi.png" alt="">
-                                <div class="product-name">Ô Long Sữa Tươi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        35,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347573" default_variation_id="347574">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/Oolong-Dao-Que-Hoa-Kem-Cheese.png" alt="">
-                                <div class="product-name">Ô Long Đào Quế Hoa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347569" default_variation_id="347570">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/phe-sua-kem-cheese.png" alt="">
-                                <div class="product-name">Phê Sữa Kem Cheese</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="347564" default_variation_id="347565">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-kem-cafe-tran-chau-soi.png" alt="">
-                                <div class="product-name">Ô Long Sữa Kem Café Trân Châu Sợi</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                            <div class="product" product_id="1134" default_variation_id="1135">
-                                <div class="tags">
-                                </div>
-                                <img src="https://tocotocotea.com/wp-content/uploads/2021/01/dau-tam-kem-pho-mai.png" alt="">
-                                <div class="product-name">Dâu Tằm Kem Phô Mai</div>
-                                <div class="product-price">
-                                    <p class="product-origin-price">
-                                        38,000đ
-                                    </p>
-                                </div>
-                                <div class="btn-increase">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
 
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="productDetails"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Thêm</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     // Lấy tất cả các danh mục
+    let cart = [];
+    let selectedToppings = [];
+    let selectedSugar = "100"; // Mặc định là 100% đường
+    let selectedIce = "100"; // Mặc định là 100% đá
+    let selectedSize = 'M'; // Mặc định là size M
+    let selectedQuantity = 1;
+
     var categories = document.querySelectorAll('.category-name');
+
 
     categories.forEach(function (category) {
         // Thêm sự kiện click cho từng danh mục
@@ -1435,11 +152,11 @@
             var listProduct = this.nextElementSibling;
 
             // Ẩn tất cả các danh sách sản phẩm khác
-            document.querySelectorAll('.list-product').forEach(function (list) {
-                if (list !== listProduct) {
-                    list.style.display = 'none'; // Ẩn các danh sách khác
-                }
-            });
+            // document.querySelectorAll('.list-product').forEach(function (list) {
+            //     if (list !== listProduct) {
+            //         list.style.display = 'none'; // Ẩn các danh sách khác
+            //     }
+            // });
 
             // Toggle hiển thị danh sách sản phẩm của danh mục hiện tại
             if (listProduct.style.display === 'none' || listProduct.style.display === '') {
@@ -1449,4 +166,298 @@
             }
         });
     });
+
+    function loadProductDetails(productId, productName, productPrice, imgURL) {
+        const data = {
+            img: imgURL,
+            name: productName,
+            price: productPrice,
+            priceL: productPrice + 3000,
+            toppingPrices: {
+                "Trân châu Baby": 8000,
+                "Trân châu Hoàng Kim": 8000,
+                "Trân châu sợi": 8000,
+                "Rau câu": 8000,
+                "Pudding": 8000,
+                "Đậu đỏ": 8000,
+                "Cream cake": 9000,
+                "Khoai môn": 9000,
+                "Trân châu Sương Mai": 9000
+            }
+        };
+
+        let quantity = 1; // khởi tạo số lượng sản phẩm
+        let selectedSizePrice = data.price; // giá ban đầu
+        console.log("Giá:", selectedSizePrice);
+        // Cập nhật nội dung của modal
+        document.getElementById("productDetails").innerHTML = `
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div>
+                            <img src="${data.img}" alt="${data.name}" width="200px">
+                        </div>
+                        <div>
+                            <strong>Tên sản phẩm:</strong> ${data.name} <br>
+                            <strong>Giá:</strong> <span id="basePrice">${selectedSizePrice.toLocaleString()} VND</span> <br>
+                            <strong>Mô tả:</strong> <br><br>
+
+                            <!-- Tăng giảm số lượng và hiển thị giá -->
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <button onclick="decreaseQuantity()" style="border-radius: 5px;">-</button>
+                                <span id="quantity">${quantity}</span>
+                                <button onclick="increaseQuantity()" style="border-radius: 5px;">+</button>
+                                <!-- Nút hiển thị tổng giá -->
+                                <button id="priceButton" style="margin-left: 20px;border-radius: 10px;"
+                                            onclick="addToCart('${data.name}', parseInt(this.innerText.replace(' VND', '').replace(/,/g, '')),
+                                                        ${quantity}, '${data.img}', selectedSize, selectedSugar, selectedIce)"
+                                                            data-bs-dismiss="modal">
+                                        ${(selectedSizePrice * quantity).toLocaleString()} VND
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; width: 480px; height: 300px; overflow-y: auto; padding: 10px;">
+                        <!-- Thêm phần chọn loại, size, đường đá, topping -->
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <div>
+                                <strong>Chọn loại:</strong>
+                                <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                    <div style="flex: 1;">
+                                        <input type="radio" id="cold" name="temperature" value="Lạnh" checked onclick="updateTemperature('Lạnh')">
+                                        <label for="cold">Lạnh</label>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <input type="radio" id="hot" name="temperature" value="Nóng" onclick="updateTemperature('Nóng')">
+                                        <label for="hot">Nóng</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <strong>Chọn size:</strong>
+                                <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                    <div style="flex: 1;">
+                                            <input type="radio" id="sizeM" name="size" value="M"
+                                            checked onclick="updateSize('M', ${data.price}, ${data.priceL})">
+                                        <label for="sizeM">Size M</label>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <input type="radio" id="sizeL" name="size" value="L"
+                                            onclick="updateSize('L', ${data.price}, ${data.priceL})">
+                                        <label for="sizeL">Size L</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <strong>Chọn đường:</strong>
+                                <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                    <div style="display: flex; gap: 20px;">
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="sugar100" name="sugarAmount" value="100" checked onclick="updateSugarAmount()">
+                                            <label for="sugar100">100% đường</label>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="sugar50" name="sugarAmount" value="50" onclick="updateSugarAmount()">
+                                            <label for="sugar50">50% đường</label>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="sugar30" name="sugarAmount" value="30" onclick="updateSugarAmount()">
+                                            <label for="sugar30">30% đường</label>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="sugar0" name="sugarAmount" value="0" onclick="updateSugarAmount()">
+                                            <label for="sugar0">0% đường</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="iceAmountContainer">
+                                <strong>Chọn đá:</strong>
+                                <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                    <div style="display: flex; gap: 20px;">
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="ice100" name="iceAmount" value="100" checked onclick="updateIceAmount()">
+                                            <label for="ice100">100% đá</label>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="ice50" name="iceAmount" value="50" onclick="updateIceAmount()">
+                                            <label for="ice50">50% đá</label>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="ice30" name="iceAmount" value="30" onclick="updateIceAmount()">
+                                            <label for="ice30">30% đá</label>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <input type="radio" id="ice0" name="iceAmount" value="0" onclick="updateIceAmount()">
+                                            <label for="ice0">0% đá</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Chọn topping:</strong>
+            <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    ${Object.keys(data.toppingPrices).map(topping => `
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1;">
+                                <input type="checkbox" id="${topping}" name="topping" value="${data.toppingPrices[topping]}" onclick="updateToppings(this)">
+                                <label for="${topping}">${topping}</label>
+                            </div>
+                            <div style="flex: 0 0 auto;">
+                                <span>+${data.toppingPrices[topping].toLocaleString()} VND</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+
+                        </div>
+                    </div>
+                `;
+
+        // Hiển thị modal
+        $('#productModal').modal('show');
+    }
+
+    function updateSize(size, price, priceL) {
+        const basePrice = size === 'M' ? price : priceL;
+        selectedSize = size; // Cập nhật kích thước đã chọn
+        document.getElementById('basePrice').innerText = basePrice.toLocaleString() + ' VND';
+        updatePrice();
+    }
+
+    function updateTemperature(temperature) {
+        if (temperature === 'Nóng') {
+            selectedIce = "0"; // Đặt mặc định đá là 0% khi chọn loại nóng
+            document.getElementById("ice0").checked = true; // Đánh dấu lựa chọn đá là 0%
+            document.getElementById("iceAmountContainer").style.display = 'none'; // Ẩn các lựa chọn đá
+        } else {
+            document.getElementById("iceAmountContainer").style.display = 'block'; // Hiện lại các lựa chọn đá
+            // Giữ lại lựa chọn đá hiện tại nếu người dùng đã chọn
+        }
+        updatePrice();
+    }
+
+    function updateToppings(checkbox) {
+        const toppingName = checkbox.id; // Lấy tên topping từ id của checkbox
+        const toppingPrice = parseInt(checkbox.value); // Lấy giá topping
+
+        if (checkbox.checked) {
+            // Tạo đối tượng cho topping và thêm vào mảng
+            selectedToppings.push({ name: toppingName, price: toppingPrice });
+        } else {
+            // Tìm và xóa topping không còn được chọn
+            const index = selectedToppings.findIndex(topping => topping.price === toppingPrice);
+            if (index > -1) {
+                selectedToppings.splice(index, 1); // Xóa topping
+            }
+        }
+        updatePrice(); // Cập nhật giá sau khi chọn hoặc bỏ chọn topping
+    }
+
+    function updateSugarAmount() {
+        selectedSugar = document.querySelector('input[name="sugarAmount"]:checked').value; // Lưu lại lựa chọn đường
+    }
+
+    function updateIceAmount() {
+        selectedIce = document.querySelector('input[name="iceAmount"]:checked').value; // Lưu lại lựa chọn đá
+    }
+
+    function calculateToppingPrice() {
+        return selectedToppings.reduce((total, topping) => total + topping.price, 0);
+    }
+
+    function updatePrice() {
+        const quantity = parseInt(document.getElementById("quantity").innerText);
+        const basePrice = parseInt(document.getElementById("basePrice").innerText.replace(/,/g, '').replace(' VND', '').trim());
+        const totalPrice = (basePrice * quantity) + calculateToppingPrice();
+
+        document.getElementById("priceButton").innerText = totalPrice.toLocaleString() + ' VND'; // Đảm bảo hiển thị đúng định dạng
+    }
+
+    function increaseQuantity() {
+        let quantity = parseInt(document.getElementById("quantity").innerText);
+        quantity++;
+        document.getElementById("quantity").innerText = quantity;
+        updatePrice();
+    }
+
+    function decreaseQuantity() {
+        let quantity = parseInt(document.getElementById("quantity").innerText);
+        if (quantity > 1) {
+            quantity--;
+            document.getElementById("quantity").innerText = quantity;
+            updatePrice();
+        }
+    }
+
+    function addToCart(productName, productPrice, quantity, imgURL, size, sugar, ice) {
+        let item = {
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+            img: imgURL,
+            size: size,
+            sugar: sugar,
+            ice: ice
+        };
+        console.log('số lượng:', item.quantity);
+        console.log('giá:', item.price);
+        const existingItem = cart.find(cartItem => cartItem.name === productName &&
+            cartItem.size === size &&
+            cartItem.sugar === sugar &&
+            cartItem.ice === ice);
+        if (existingItem) {
+            existingItem.quantity += quantity; // Cập nhật số lượng
+        } else {
+            cart.push(item); // Thêm sản phẩm mới vào giỏ hàng
+        }
+
+        updateCartDisplay();
+
+    }
+
+    function updateCartDisplay() {
+        const cartDisplay = document.querySelector('.cart-ss1');
+        const totalQuantityElement = document.querySelector('.cart-ss2-two');
+        const totalPriceElement = document.querySelector('.cart-ss2-four');
+
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+        console.log('Tổng sp:', cartCount);
+        console.log('Tổng giá:', totalPrice);
+
+        // Cập nhật tổng số lượng sản phẩm
+        totalQuantityElement.textContent = cartCount;
+
+        // Cập nhật tổng giá trị
+        totalPriceElement.textContent = totalPrice > 0 ? `${totalPrice.toLocaleString()}đ` : '0đ';
+
+        // Xóa nội dung hiện tại của giỏ hàng
+        cartDisplay.innerHTML = '';
+
+        if (cartCount === 0) {
+            cartDisplay.innerHTML = 'Chưa có sản phẩm nào!';
+        } else {
+            // Tạo danh sách sản phẩm với thông tin chi tiết
+            const productList = cart.map(item => `
+                    <div>
+                        <strong>${item.name} (${item.size})</strong> <br>
+                        ${item.sugar}% đường, ${item.ice}% đá <br>
+                    </div>
+                `).join('');
+
+            // Cập nhật nội dung giỏ hàng với thông tin sản phẩm
+            cartDisplay.innerHTML += productList;
+        }
+    }
 </script>

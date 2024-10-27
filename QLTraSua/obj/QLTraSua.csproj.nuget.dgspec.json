@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {}
+    "D:\\LTweb\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {}
   },
   "projects": {
-    "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {
+    "D:\\LTweb\\QLTraSua\\QLTraSua\\QLTraSua.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+        "projectUniqueName": "D:\\LTweb\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
         "projectName": "QLTraSua",
-        "projectPath": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
-        "packagesPath": "C:\\Users\\AnhKim\\.nuget\\packages\\",
-        "outputPath": "D:\\Hoc tren truong\\Lap trinh web\\BTL\\QLTraSua\\QLTraSua\\obj\\",
+        "projectPath": "D:\\LTweb\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\LTweb\\QLTraSua\\QLTraSua\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\AnhKim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
