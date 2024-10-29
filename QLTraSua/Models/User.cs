@@ -6,8 +6,8 @@ namespace QLTraSua.Models
     [Table("users")]
     public class User
     {
-        public User() { 
-            Cart = new Cart();
+        public User()
+        {
             Orders = new HashSet<Order>();
         }
 
@@ -36,9 +36,7 @@ namespace QLTraSua.Models
         public string Password { get; set; }
 
         [Column("phone")]
-        public string Phone {  get; set; }
-
-        public virtual Cart Cart { get; set; }
+        public string Phone { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
 

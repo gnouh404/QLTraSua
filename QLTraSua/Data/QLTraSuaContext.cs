@@ -8,11 +8,11 @@ namespace QLTraSua.Data
         public QLTraSuaContext(DbContextOptions<QLTraSuaContext> options):base(options) { }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Cart> Carts { get; set; }
+        //public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<ProductCart> ProductCarts { get; set; }
+        //public virtual DbSet<ProductCart> ProductCarts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -22,7 +22,7 @@ namespace QLTraSua.Data
             .WithMany(c => c.Products)        
             .HasForeignKey(p => p.CategoryID);
 
-        // products vs cart
+            // products vs cart
             modelBuilder.Entity<ProductCart>()
         .HasKey(pc => new { pc.ProductID, pc.CartID }); // Khóa chính cho bảng trung gian
 
@@ -50,11 +50,11 @@ namespace QLTraSua.Data
                 .WithMany(o => o.OrderDetails)
                 .HasForeignKey(od => od.OrderID);
 
-            // cart vs orders
-            modelBuilder.Entity<Order>()
-                .HasOne(o => o.Cart)
-                .WithMany() // Nếu không cần truy cập ngược lại từ Cart đến Order
-                .HasForeignKey(o => o.CartID);
+            //// cart vs orders
+            //modelBuilder.Entity<Order>()
+            //    .HasOne(o => o.Cart)
+            //    .WithMany() // Nếu không cần truy cập ngược lại từ Cart đến Order
+            //    .HasForeignKey(o => o.CartID);
 
             // user vs order
             modelBuilder.Entity<Order>()
@@ -62,11 +62,11 @@ namespace QLTraSua.Data
                 .WithMany(u => u.Orders)
                 .HasForeignKey(o => o.UserID);
 
-            // user vs cart
-            modelBuilder.Entity<User>()
-            .HasOne(u => u.Cart)       // Mỗi User có một Cart
-            .WithOne(c => c.User)     // Mỗi Cart thuộc về một User
-            .HasForeignKey<Cart>(c => c.UserID);
+            //// user vs cart
+            //modelBuilder.Entity<User>()
+            ////.HasOne(u => u.Cart)       // Mỗi User có một Cart
+            //.WithOne(c => c.User)     // Mỗi Cart thuộc về một User
+            //.HasForeignKey<Cart>(c => c.UserID);
         }
         public void Seed()
         {

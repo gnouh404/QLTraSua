@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLTraSua.Data;
 using QLTraSua.Models;
+using QLTraSua.ViewModels;
+using System.Diagnostics;
 
 namespace QLTraSua.Controllers
 {
@@ -14,12 +16,111 @@ namespace QLTraSua.Controllers
         {
             db = context;
         }
+
+
         public IActionResult Index()
         {
             var products = db.Products.Include(p => p.Category).ToList();
             return View(products);
         }
-        //Create
+
+
+
+
+        public IActionResult Duyet()
+        {
+            var orders = db.Orders.Include(o => o.User)
+                                  .Include(o => o.OrderDetails) // Nếu cần thiết
+                                  .Where(o => o.OrderDetails.Any()) // Lọc đơn hàng có sản phẩm
+                                  .Select(o => new DeleteOrderViewModel
+                                  {
+                                      OrderID = o.OrderID,
+                                      OrderDate = o.OrderDate,
+                                      TotalAmount = o.TotalAmount,
+                                      Status = o.Status,
+                                      UserName = o.User != null
+                                          ? $"{o.User.FirstName} {o.User.LastName}"
+                                          : "Khách hàng không xác định",
+                                      ProductName = o.OrderDetails.Select(od => od.Product.ProductName).FirstOrDefault() // Lấy tên sản phẩm đầu tiên
+                                  })
+                                  .ToList();
+
+            return View(orders);
+        }
+
+
+
+        [Route(" DeleteOrder")]
+        [HttpGet]
+        public IActionResult DeleteOrder(int id)
+        {
+            Debug.WriteLine($"Product ID: {id}");
+
+            var product1 = db.Orders.FirstOrDefault(o => o.OrderID == id);
+            Debug.WriteLine($"Product ID: {product1.UserID}");
+            if (product1 != null)
+            {
+                product1.Status = false;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("Duyet");
+
+
+        }
+        [Route("AprroveOrder")]
+        [HttpGet]
+        public IActionResult AprroveOrder(int id)
+        {
+            Debug.WriteLine($"Product ID: {id}");
+
+            var product1 = db.Orders.FirstOrDefault(o => o.OrderID == id);
+            Debug.WriteLine($"Product ID: {product1.UserID}");
+            if (product1 != null)
+            {
+                product1.Status = true;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("Duyet");
+
+        }
+
+        //// POST: Learner/Delete/5
+        [HttpPost, ActionName("DeleteOrder")]
+        public IActionResult DeleteOrderConfirmed(int OrderID)
+        {
+            Debug.WriteLine($"Xóa đơn hàng với ID: {OrderID}");
+
+            // Kiểm tra xem db.Orders có phải là null không
+            if (db.Orders == null)
+            {
+                return Problem("Entity set 'Orders' is null.");
+            }
+
+            // Tìm đơn hàng theo ID
+            var order = db.Orders.Find(OrderID);
+            Debug.WriteLine($"Tìm kiếm đơn hàng với ID: {OrderID}. Kết quả: {(order != null ? "Tìm thấy" : "Không tìm thấy")}.");
+
+            if (order != null)
+            {
+                // Xóa đơn hàng
+                db.Orders.Remove(order);
+                Debug.WriteLine($"Đơn hàng với ID: {OrderID} đã được xóa.");
+                db.SaveChanges(); // Di chuyển vào trong điều kiện
+            }
+            else
+            {
+                Debug.WriteLine($"Không thể xóa đơn hàng với ID: {OrderID} vì không tìm thấy.");
+            }
+
+            // Chuyển hướng đến phương thức Duyet
+            return RedirectToAction(nameof(Duyet));
+        }
+
+
+
+
         public IActionResult Create()
         {
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
@@ -109,6 +210,8 @@ namespace QLTraSua.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
+
+
             if (db.Products == null)
             {
                 return Problem("Entity set 'Products' is null.");
