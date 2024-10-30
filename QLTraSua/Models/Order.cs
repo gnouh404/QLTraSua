@@ -6,9 +6,10 @@ namespace QLTraSua.Models
     [Table("orders")]
     public class Order
     {
-        public Order() { 
+        public Order()
+        {
             User = new User();
-            Cart = new Cart();
+
             OrderDetails = new List<OrderDetails>();
         }
 
@@ -29,13 +30,11 @@ namespace QLTraSua.Models
         [Column("user_id")]
         public int UserID { get; set; }
 
-        [ForeignKey("Cart")]
-        [Column("cart_id")]
-        public int CartID { get; set; }
+
 
         public virtual User User { get; set; }
 
-        public virtual Cart Cart { get; set; }
+
 
 
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
