@@ -6,7 +6,8 @@ namespace QLTraSua.Models
     [Table("orders")]
     public class Order
     {
-        public Order() { 
+        public Order()
+        {
             User = new User();
             Cart = new Cart();
             OrderDetails = new List<OrderDetails>();
@@ -33,10 +34,17 @@ namespace QLTraSua.Models
         [Column("cart_id")]
         public int CartID { get; set; }
 
+        // Thêm thuộc tính CustomerID
+        [ForeignKey("Customer")]
+        [Column("customer_id")]
+        public int CustomerID { get; set; } // Khóa ngoại đến Customer
+
         public virtual User User { get; set; }
 
         public virtual Cart Cart { get; set; }
 
+        // Thêm thuộc tính điều hướng đến Customer
+        public virtual Customer Customer { get; set; }
 
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
     }

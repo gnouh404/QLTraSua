@@ -1,0 +1,344 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+ @model IEnumerable<Product>
+<!-- main -->
+<div style="position: absolute; width: calc(100% - 300px); left: 300px; min-height: 100vh; background: var(--white); transition: 0.5s; display: block;">
+    <div style="width: 100%; height: 60px; display: flex; justify-content: center; align-items: center; padding: 0 10px;">
+        <!-- Search Bar -->
+        <div style="position: relative; width: 400px; margin: 0 10px;">
+            <label style="display: flex; align-items: center; position: relative; width: 100%;">
+                <input type="text" placeholder="Search here"
+                       style="width: 100%; height: 40px; border-radius: 40px; padding: 5px 20px; padding-left: 40px; font-size: 18px; outline: none; border: 1px solid var(--black2);" />
+                <!-- Search Icon -->
+                <ion-icon name="search-outline"
+                          style="position: absolute; left: 15px; font-size: 20px; color: var(--black2);"></ion-icon>
+            </label>
+        </div>
+
+        <!-- User Image -->
+        <div style="position: absolute; right: 10px; width: 40px; height: 40px;">
+            <img src="~/login/images/user.jpg" style="width: 100%; height: 100%; border-radius: 50%;" />
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <button style="
+            width: 23%; /* Slightly larger width */
+            background: #fff;
+            padding: 15px; /* Slightly larger padding */
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Adjusted shadow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        "
+                onmouseover="this.style.boxShadow='0 5px 10px rgba(0,0,0,0.15)';"
+                onmouseout="this.style.boxShadow='0 3px 6px rgba(0,0,0,0.1)';">
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <div style="font-size: 1.6em; color: #007bff; font-weight: bold;">1,504</div> <!-- Slightly larger font size -->
+                <div style="color: #888;">Số lượt truy cập</div>
+            </div>
+            <div style="font-size: 1.8em; color: #888;">
+                <!-- Slightly larger icon -->
+                <ion-icon name="eye-outline"></ion-icon>
+            </div>
+        </button>
+
+        <!-- Button to scroll to product section -->
+        <button id="productCountButton" style="
+    width: 23%; /* Adjusted for compactness */
+    background: #fff;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Reduced shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+" onclick="scrollToProducts()"
+                onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+                onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)';">
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <div id="productCount" style="font-size: 1.5em; color: #007bff; font-weight: bold;">0</div>
+                <div style="color: #888;">Sản phẩm</div>
+            </div>
+            <div style="font-size: 1.5em; color: #888;">
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
+        </button>
+        <button style="
+            width: 23%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        "
+                onmouseover="this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';"
+                onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">284</div>
+                <div style="color: #888;">Tin nhắn</div>
+            </div>
+            <div style="font-size: 2em; color: #888;">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+        </button>
+        <button style="
+            width: 23%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        "
+                onmouseover="this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';"
+                onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+            <div style="display: flex; flex-direction: column; text-align: left;">
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">$7,842</div>
+                <div style="color: #888;">Doanh thu</div>
+            </div>
+            <div style="font-size: 2em; color: #888;">
+                <ion-icon name="cash-outline"></ion-icon>
+            </div>
+        </button>
+    </div>
+    <div style="position: relative;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 30px;
+        min-height: 200px;">
+
+        <div style="position: relative;
+            background: #fff;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;">
+            <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 10px;">
+                Số lượng sản phẩm của cửa hàng
+            </div>
+            <canvas id="myChart" style="width: 100%; height: 300px;"></canvas>
+        </div>
+        <div style="position: relative;
+             background: #fff;
+             padding: 20px;
+             width: 100%;
+             box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+             border-radius: 20px;">
+
+            <!-- Title for the chart -->
+            <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 10px;">
+                Doanh thu cửa hàng theo tháng
+            </div>
+            <canvas id="earning" style="width: 100%; height: 300px;"></canvas>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; grid-gap: 30px; padding: 20px;">
+        <!-- Phần Sản phẩm -->
+        <div id="productSection" style="background: var(--white); padding: 20px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px; margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <h2>Sản phẩm</h2>
+                <a href="#" style="padding: 5px 10px; background: var(--blue); text-decoration: none; color: var(--white); border-radius: 6px;">View All</a>
+            </div>
+            <div class="ms-2 mx-2">
+                <table id="productTable" class="table table-striped" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Thể loại</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in Model)
+                        {
+                            <tr>
+                                <td>@p.ProductName</td>
+                                <td>@p.ProductPrice</td>
+                                <td>@p.Category?.CategoryName</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Phần Khách hàng thân thiết -->
+        <div style="background: var(--white); padding: 20px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px; align-self: start;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <h2>Khách hàng thân thiết</h2>
+            </div>
+            <table style="width: 100%; margin-top: 10px;">
+                <tr>
+                    <td width="60px">
+                        <div class="imgBx">
+                            <img src="~/login/images/img1.jpg" style="width: 40px; height: 40px; border-radius: 50%;" />
+                        </div>
+                    </td>
+                    <td>
+                        <h4 style="font-size: 20px; margin: 0;">Nguyễn Văn A<br />
+                            <span style="font-size: 18px; color: gray;">123 Phố cổ, Hà Nội</span>
+                        </h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="60px">
+                        <div class="imgBx">
+                            <img src="~/login/images/img2.jpg" style="width: 40px; height: 40px; border-radius: 50%;" />
+                        </div>
+                    </td>
+                    <td>
+                        <h4 style="font-size: 20px; margin: 0;">Trần Thị B<br /><span style="font-size: 18px; color: gray;">437 Lê Duẩn, TP Hồ Chí Minh</span></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="60px">
+                        <div class="imgBx">
+                            <img src="~/login/images/img3.jpg" style="width: 40px; height: 40px; border-radius: 50%;" />
+                        </div>
+                    </td>
+                    <td>
+                        <h4 style="font-size: 20px; margin: 0;">Lê Văn C<br /><span style ="font-size: 18px; color: gray;">12 Xã Quê, Cần Thơ</span></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="60px">
+                        <div class="imgBx">
+                            <img src="~/login/images/img4.jpg" style="width: 40px; height: 40px; border-radius: 50%;" />
+                        </div>
+                    </td>
+                    <td>
+                        <h4 style="font-size: 20px; margin: 0;">Vũ Thị Tuyết Nhi<br /><span style="font-size: 18px; color: gray;">X11, Nam Định</span></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="60px">
+                        <div class="imgBx">
+                            <img src="~/login/images/img5.jpg" style="width: 40px; height: 40px; border-radius: 50%;" />
+                        </div>
+                    </td>
+                    <td>
+                        <h4 style="font-size: 20px; margin: 0;">Nguyên Gia Hân<br /><span style="font-size: 18px; color: gray;">3 Cầu Giấy, Đà Nẵng</span></h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+@{
+    // Tạo một Dictionary đếm số lượng sản phẩm theo thể loại
+    var categoryCounts = Model
+        .GroupBy(p => p.Category?.CategoryName)
+        .ToDictionary(g => g.Key, g => g.Count());
+
+    // Chuyển Dictionary này thành JSON
+    var categoryCountsJson = System.Text.Json.JsonSerializer.Serialize(categoryCounts);
+}
+
+<!-- Chart.js Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    function updateProductCount() {
+        const productTable = document.getElementById('productTable');
+        const productCount = productTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr').length;
+        document.getElementById('productCount').innerText = productCount;
+    }
+
+    // Update product count on page load
+    window.onload = updateProductCount;
+    // Polar Area Chart for Traffic Source
+    // Chuyển dữ liệu từ Razor sang JSON cho JavaScript sử dụng
+    // Chuyển JSON từ Razor sang JavaScript
+    const categoryCounts = @Html.Raw(categoryCountsJson);
+
+    function scrollToProducts() {
+        document.getElementById('productSection').scrollIntoView({ behavior: 'smooth' });
+    }
+    // Lấy nhãn và dữ liệu từ categoryCounts
+    const labels = Object.keys(categoryCounts);
+    const data = Object.values(categoryCounts);
+
+    // Cấu hình biểu đồ PolarArea với dữ liệu mới
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Số lượng',
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Bar Chart for Earnings by Month
+    const earningCtx = document.getElementById('earning').getContext('2d');
+    const earningChart = new Chart(earningCtx, {
+        type: "bar",
+        data: {
+            labels: [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ],
+            datasets: [
+                {
+                    label: "Doanh thu",
+                    data: [
+                        4500, 4106, 7005, 6754, 5154, 4554,
+                        7815, 3152, 12204, 4457, 8740, 11000
+                    ],
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)",
+                        "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)",
+                        "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)",
+                        "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)",
+                        "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)",
+                        "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"
+                    ],
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

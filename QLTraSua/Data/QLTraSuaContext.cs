@@ -5,7 +5,8 @@ namespace QLTraSua.Data
 {
     public class QLTraSuaContext : DbContext
     {
-        public QLTraSuaContext(DbContextOptions<QLTraSuaContext> options):base(options) { }
+        public QLTraSuaContext(DbContextOptions<QLTraSuaContext> options) : base(options) { }
+
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
@@ -13,18 +14,19 @@ namespace QLTraSua.Data
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ProductCart> ProductCarts { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; } // Thêm DbSet cho Customer
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-        // products and categories
+            // products and categories
             modelBuilder.Entity<Product>()
-            .HasOne(p => p.Category)          
-            .WithMany(c => c.Products)        
-            .HasForeignKey(p => p.CategoryID);
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryID);
 
-        // products vs cart
+            // products vs cart
             modelBuilder.Entity<ProductCart>()
-        .HasKey(pc => new { pc.ProductID, pc.CartID }); // Khóa chính cho bảng trung gian
+                .HasKey(pc => new { pc.ProductID, pc.CartID }); // Khóa chính cho bảng trung gian
 
             modelBuilder.Entity<ProductCart>()
                 .HasOne(pc => pc.Product)
@@ -38,7 +40,7 @@ namespace QLTraSua.Data
 
             // products vs order
             modelBuilder.Entity<OrderDetails>()
-                .HasKey(pc => new { pc.ProductID, pc.OrderID });
+                .HasKey(od => new { od.ProductID, od.OrderID });
 
             modelBuilder.Entity<OrderDetails>()
                 .HasOne(od => od.Product)
@@ -64,26 +66,32 @@ namespace QLTraSua.Data
 
             // user vs cart
             modelBuilder.Entity<User>()
-            .HasOne(u => u.Cart)       // Mỗi User có một Cart
-            .WithOne(c => c.User)     // Mỗi Cart thuộc về một User
-            .HasForeignKey<Cart>(c => c.UserID);
+                .HasOne(u => u.Cart) // Mỗi User có một Cart
+                .WithOne(c => c.User) // Mỗi Cart thuộc về một User
+                .HasForeignKey<Cart>(c => c.UserID);
+
+            // customer vs order (nếu cần, ví dụ: mỗi khách hàng có thể có nhiều đơn hàng)
+            modelBuilder.Entity<Customer>()
+                .HasMany(c => c.Orders)
+                .WithOne(o => o.Customer)
+                .HasForeignKey(o => o.CustomerID);
         }
+
         public void Seed()
         {
-            
             if (!Categories.Any())
             {
                 var newCategories = new List<Category>
-            {
-                new Category { CategoryName = "Món Nổi Bật" },
-                new Category { CategoryName = "Instant Milk Tea" },
-                new Category { CategoryName = "Trà Sữa" },
-                new Category { CategoryName = "Fresh Fruit Tea" },
-                new Category { CategoryName = "Macchiato Cream Cheese" },
-                new Category { CategoryName = "Cà Phê" },
-                new Category { CategoryName = "Ice Cream" },
-                new Category { CategoryName = "Special Menu" }
-            };
+                {
+                    new Category { CategoryName = "Món Nổi Bật" },
+                    new Category { CategoryName = "Instant Milk Tea" },
+                    new Category { CategoryName = "Trà Sữa" },
+                    new Category { CategoryName = "Fresh Fruit Tea" },
+                    new Category { CategoryName = "Macchiato Cream Cheese" },
+                    new Category { CategoryName = "Cà Phê" },
+                    new Category { CategoryName = "Ice Cream" },
+                    new Category { CategoryName = "Special Menu" }
+                };
 
                 Categories.AddRange(newCategories);
                 SaveChanges();

@@ -4,12 +4,30 @@
         <div class="sb-sidenav-menu">
 
             <div class="nav">
-
-                <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-house"></i></div>
-                    Home
-                </a>
-
+                <form asp-action="Index" asp-controller="TestAdmin" method="post">
+                    <button style="display: flex; align-items: center; background-color: #212529; color: white; font-size: 24px; padding: 10px 20px; border: none; border-radius: 5px; margin-bottom: 10px;">
+                        <div class="sb-nav-link-icon" style="margin-right: 8px; font-size: 28px;">
+                            <i class="fas fa-house"></i>
+                        </div>
+                        Home
+                    </button>
+                </form>
+                <form asp-action="Dashboard" asp-controller="TestAdmin" method="post">
+                    <button style="display: flex; align-items: center; background-color: #212529; color: white; font-size: 24px; padding: 10px 20px; border: none; border-radius: 5px; margin-bottom: 10px;">
+                        <div class="sb-nav-link-icon" style="margin-right: 8px; font-size: 28px;">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        DashBoard
+                    </button>
+                </form>
+                <form asp-action="Customer" asp-controller="TestAdmin" method="post">
+                    <button style="display: flex; align-items: center; background-color: #212529; color: white; font-size: 24px; padding: 10px 20px; border: none; border-radius: 5px; margin-bottom: 10px;">
+                        <div class="sb-nav-link-icon" style="margin-right: 8px; font-size: 28px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        Customers
+                    </button>
+                </form>
             </div>
         </div>
         <div class="sb-sidenav-footer">
