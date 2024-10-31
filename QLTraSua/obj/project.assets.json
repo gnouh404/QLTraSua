@@ -4039,19 +4039,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\win\\.nuget\\packages\\": {}
+    "C:\\Users\\Phuong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\nam3\\ki1\\LTWeb\\Web\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+      "projectUniqueName": "C:\\Users\\Phuong\\Source\\Repos\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
       "projectName": "QLTraSua",
-      "projectPath": "C:\\nam3\\ki1\\LTWeb\\Web\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
-      "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-      "outputPath": "C:\\nam3\\ki1\\LTWeb\\Web\\QLTraSua\\QLTraSua\\obj\\",
+      "projectPath": "C:\\Users\\Phuong\\Source\\Repos\\QLTraSua\\QLTraSua\\QLTraSua.csproj",
+      "packagesPath": "C:\\Users\\Phuong\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Phuong\\Source\\Repos\\QLTraSua\\QLTraSua\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Phuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

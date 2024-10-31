@@ -30,13 +30,13 @@ namespace QLTraSua.Models
         public string Username { get; set; }
 
         [Column("email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Column("password")]
         public string Password { get; set; }
 
         [Column("phone")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
 
