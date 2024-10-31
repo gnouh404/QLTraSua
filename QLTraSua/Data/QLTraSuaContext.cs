@@ -13,6 +13,7 @@ namespace QLTraSua.Data
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
         //public virtual DbSet<ProductCart> ProductCarts { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; } // Thêm DbSet cho Customer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -67,6 +68,12 @@ namespace QLTraSua.Data
             ////.HasOne(u => u.Cart)       // Mỗi User có một Cart
             //.WithOne(c => c.User)     // Mỗi Cart thuộc về một User
             //.HasForeignKey<Cart>(c => c.UserID);
+
+            // customer vs order (nếu cần, ví dụ: mỗi khách hàng có thể có nhiều đơn hàng)
+            modelBuilder.Entity<Customer>()
+                .HasMany(c => c.Orders)
+                .WithOne(o => o.Customer)
+                .HasForeignKey(o => o.CustomerID);
         }
         public void Seed()
         {

@@ -31,11 +31,11 @@ namespace QLTraSua.Models
         public int UserID { get; set; }
 
 
-
+        [ForeignKey("Customer")]
+        [Column("customer_id")]
+        public int CustomerID { get; set; } // Khóa ngoại đến Customer
         public virtual User User { get; set; }
-
-
-
+        public virtual Customer Customer { get; set; }
 
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
     }
