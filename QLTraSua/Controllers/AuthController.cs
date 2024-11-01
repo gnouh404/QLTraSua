@@ -46,6 +46,10 @@ namespace QLTraSua.Controllers
 				{
 					HttpContext.Session.SetString("UserName", u.Username.ToString());
 					return RedirectToAction("Index", "Test");
+				}else
+                 {
+                    @ViewBag.ErrorMessage = "Tên đăng nhập hoặc mật khẩu không đúng, vui lòng nhập lại";
+					ModelState.Clear(); // Reset input
 				}
 			}
 			return View();
