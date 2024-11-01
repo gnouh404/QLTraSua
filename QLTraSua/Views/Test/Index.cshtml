@@ -191,137 +191,137 @@
         console.log("Giá:", selectedSizePrice);
         // Cập nhật nội dung của modal
         document.getElementById("productDetails").innerHTML = `
-                    <div style="display: flex; align-items: flex-start; gap: 20px;">
-                        <div>
-                            <img src="${data.img}" alt="${data.name}" width="200px">
-                        </div>
-                        <div>
-                            <strong>Tên sản phẩm:</strong> ${data.name} <br>
-                            <strong>Giá:</strong> <span id="basePrice">${selectedSizePrice.toLocaleString()} VND</span> <br>
-                            <strong>Mô tả:</strong> <br><br>
+                            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                                <div>
+                                    <img src="${data.img}" alt="${data.name}" width="200px">
+                                </div>
+                                <div>
+                                    <strong>Tên sản phẩm:</strong> ${data.name} <br>
+                                    <strong>Giá:</strong> <span id="basePrice">${selectedSizePrice.toLocaleString()} VND</span> <br>
+                                    <strong>Mô tả:</strong> <br><br>
 
-                            <!-- Tăng giảm số lượng và hiển thị giá -->
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <button onclick="decreaseQuantity()" style="border-radius: 5px;">-</button>
-                                <span id="quantity">${quantity}</span>
-                                <button onclick="increaseQuantity()" style="border-radius: 5px;">+</button>
-                                <!-- Nút hiển thị tổng giá -->
-                                <button id="priceButton" style="margin-left: 20px;border-radius: 10px;"
-                                            onclick="addToCart('${data.name}', parseInt(this.innerText.replace(' VND', '').replace(/,/g, '')),
-                                                        ${quantity}, '${data.img}', selectedSize, selectedSugar, selectedIce)"
-                                                            data-bs-dismiss="modal">
-                                        ${(selectedSizePrice * quantity).toLocaleString()} VND
-                                </button>
+                                    <!-- Tăng giảm số lượng và hiển thị giá -->
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <button onclick="decreaseQuantity()" style="border-radius: 5px;">-</button>
+                                        <span id="quantity">${quantity}</span>
+                                        <button onclick="increaseQuantity()" style="border-radius: 5px;">+</button>
+                                        <!-- Nút hiển thị tổng giá -->
+                                        <button id="priceButton" style="margin-left: 20px;border-radius: 10px;"
+                                                    onclick="addToCart('${data.name}', parseInt(this.innerText.replace(' VND', '').replace(/,/g, '')),
+                                                                ${quantity}, '${data.img}', selectedSize, selectedSugar, selectedIce)"
+                                                                    data-bs-dismiss="modal">
+                                                ${(selectedSizePrice * quantity).toLocaleString()} VND
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div style="margin-top: 20px; width: 480px; height: 300px; overflow-y: auto; padding: 10px;">
+                                <!-- Thêm phần chọn loại, size, đường đá, topping -->
+                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                    <div>
+                                        <strong>Chọn loại:</strong>
+                                        <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                            <div style="flex: 1;">
+                                                <input type="radio" id="cold" name="temperature" value="Lạnh" checked onclick="updateTemperature('Lạnh')">
+                                                <label for="cold">Lạnh</label>
+                                            </div>
+                                            <div style="flex: 1;">
+                                                <input type="radio" id="hot" name="temperature" value="Nóng" onclick="updateTemperature('Nóng')">
+                                                <label for="hot">Nóng</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <strong>Chọn size:</strong>
+                                        <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                            <div style="flex: 1;">
+                                                    <input type="radio" id="sizeM" name="size" value="M"
+                                                    checked onclick="updateSize('M', ${data.price}, ${data.priceL})">
+                                                <label for="sizeM">Size M</label>
+                                            </div>
+                                            <div style="flex: 1;">
+                                                <input type="radio" id="sizeL" name="size" value="L"
+                                                    onclick="updateSize('L', ${data.price}, ${data.priceL})">
+                                                <label for="sizeL">Size L</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <strong>Chọn đường:</strong>
+                                        <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                            <div style="display: flex; gap: 20px;">
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="sugar100" name="sugarAmount" value="100" checked onclick="updateSugarAmount()">
+                                                    <label for="sugar100">100% đường</label>
+                                                </div>
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="sugar50" name="sugarAmount" value="50" onclick="updateSugarAmount()">
+                                                    <label for="sugar50">50% đường</label>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex; gap: 20px; margin-top: 10px;">
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="sugar30" name="sugarAmount" value="30" onclick="updateSugarAmount()">
+                                                    <label for="sugar30">30% đường</label>
+                                                </div>
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="sugar0" name="sugarAmount" value="0" onclick="updateSugarAmount()">
+                                                    <label for="sugar0">0% đường</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="iceAmountContainer">
+                                        <strong>Chọn đá:</strong>
+                                        <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                                            <div style="display: flex; gap: 20px;">
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="ice100" name="iceAmount" value="100" checked onclick="updateIceAmount()">
+                                                    <label for="ice100">100% đá</label>
+                                                </div>
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="ice50" name="iceAmount" value="50" onclick="updateIceAmount()">
+                                                    <label for="ice50">50% đá</label>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex; gap: 20px; margin-top: 10px;">
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="ice30" name="iceAmount" value="30" onclick="updateIceAmount()">
+                                                    <label for="ice30">30% đá</label>
+                                                </div>
+                                                <div style="flex: 1;">
+                                                    <input type="radio" id="ice0" name="iceAmount" value="0" onclick="updateIceAmount()">
+                                                    <label for="ice0">0% đá</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <strong>Chọn topping:</strong>
+                    <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            ${Object.keys(data.toppingPrices).map(topping => `
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="flex: 1;">
+                                        <input type="checkbox" id="${topping}" name="topping" value="${data.toppingPrices[topping]}" onclick="updateToppings(this)">
+                                        <label for="${topping}">${topping}</label>
+                                    </div>
+                                    <div style="flex: 0 0 auto;">
+                                        <span>+${data.toppingPrices[topping].toLocaleString()} VND</span>
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
                     </div>
-
-                    <div style="margin-top: 20px; width: 480px; height: 300px; overflow-y: auto; padding: 10px;">
-                        <!-- Thêm phần chọn loại, size, đường đá, topping -->
-                        <div style="display: flex; flex-direction: column; gap: 20px;">
-                            <div>
-                                <strong>Chọn loại:</strong>
-                                <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
-                                    <div style="flex: 1;">
-                                        <input type="radio" id="cold" name="temperature" value="Lạnh" checked onclick="updateTemperature('Lạnh')">
-                                        <label for="cold">Lạnh</label>
-                                    </div>
-                                    <div style="flex: 1;">
-                                        <input type="radio" id="hot" name="temperature" value="Nóng" onclick="updateTemperature('Nóng')">
-                                        <label for="hot">Nóng</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <strong>Chọn size:</strong>
-                                <div style="display: flex; gap: 20px;background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
-                                    <div style="flex: 1;">
-                                            <input type="radio" id="sizeM" name="size" value="M"
-                                            checked onclick="updateSize('M', ${data.price}, ${data.priceL})">
-                                        <label for="sizeM">Size M</label>
-                                    </div>
-                                    <div style="flex: 1;">
-                                        <input type="radio" id="sizeL" name="size" value="L"
-                                            onclick="updateSize('L', ${data.price}, ${data.priceL})">
-                                        <label for="sizeL">Size L</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <strong>Chọn đường:</strong>
-                                <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
-                                    <div style="display: flex; gap: 20px;">
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="sugar100" name="sugarAmount" value="100" checked onclick="updateSugarAmount()">
-                                            <label for="sugar100">100% đường</label>
-                                        </div>
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="sugar50" name="sugarAmount" value="50" onclick="updateSugarAmount()">
-                                            <label for="sugar50">50% đường</label>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex; gap: 20px; margin-top: 10px;">
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="sugar30" name="sugarAmount" value="30" onclick="updateSugarAmount()">
-                                            <label for="sugar30">30% đường</label>
-                                        </div>
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="sugar0" name="sugarAmount" value="0" onclick="updateSugarAmount()">
-                                            <label for="sugar0">0% đường</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="iceAmountContainer">
-                                <strong>Chọn đá:</strong>
-                                <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
-                                    <div style="display: flex; gap: 20px;">
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="ice100" name="iceAmount" value="100" checked onclick="updateIceAmount()">
-                                            <label for="ice100">100% đá</label>
-                                        </div>
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="ice50" name="iceAmount" value="50" onclick="updateIceAmount()">
-                                            <label for="ice50">50% đá</label>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex; gap: 20px; margin-top: 10px;">
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="ice30" name="iceAmount" value="30" onclick="updateIceAmount()">
-                                            <label for="ice30">30% đá</label>
-                                        </div>
-                                        <div style="flex: 1;">
-                                            <input type="radio" id="ice0" name="iceAmount" value="0" onclick="updateIceAmount()">
-                                            <label for="ice0">0% đá</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Chọn topping:</strong>
-            <div style="margin-top: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 10px;">
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    ${Object.keys(data.toppingPrices).map(topping => `
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <input type="checkbox" id="${topping}" name="topping" value="${data.toppingPrices[topping]}" onclick="updateToppings(this)">
-                                <label for="${topping}">${topping}</label>
-                            </div>
-                            <div style="flex: 0 0 auto;">
-                                <span>+${data.toppingPrices[topping].toLocaleString()} VND</span>
-                            </div>
-                        </div>
-                    `).join('')}
                 </div>
-            </div>
-        </div>
 
-                        </div>
-                    </div>
-                `;
+                                </div>
+                            </div>
+                        `;
 
         // Hiển thị modal
         $('#productModal').modal('show');
@@ -420,7 +420,9 @@
         } else {
             cart.push(item); // Thêm sản phẩm mới vào giỏ hàng
         }
-
+        // Cập nhật giỏ hàng trong sessionStorage
+        //sessionStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('cart', JSON.stringify(cart));
         updateCartDisplay();
 
     }
@@ -450,14 +452,26 @@
         } else {
             // Tạo danh sách sản phẩm với thông tin chi tiết
             const productList = cart.map(item => `
-                    <div>
-                        <strong>${item.name} (${item.size})</strong> <br>
-                        ${item.sugar}% đường, ${item.ice}% đá <br>
-                    </div>
-                `).join('');
+                            <div>
+                                <strong>${item.name} (${item.size})</strong> <br>
+                                ${item.sugar}% đường, ${item.ice}% đá <br>
+                            </div>
+                        `).join('');
 
             // Cập nhật nội dung giỏ hàng với thông tin sản phẩm
             cartDisplay.innerHTML += productList;
         }
     }
+    function checkCartBeforeCheckout() {
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        const noProductMessage = document.getElementById('noProductMessage');
+
+        if (cartCount === 0) {
+            noProductMessage.style.display = 'block'; // Hiện thông báo nếu giỏ hàng trống
+        } else {
+            noProductMessage.style.display = 'none'; // Ẩn thông báo nếu có sản phẩm
+            window.location.href = '/Test/Payment'; // Chuyển đến trang thanh toán
+        }
+    }
+
 </script>

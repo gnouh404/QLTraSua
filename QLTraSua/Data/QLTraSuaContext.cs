@@ -6,8 +6,8 @@ namespace QLTraSua.Data
     public class QLTraSuaContext : DbContext
     {
         public QLTraSuaContext(DbContextOptions<QLTraSuaContext> options):base(options) { }
-
-		public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<DeliveryInfo> DeliveryInfos { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         //public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }

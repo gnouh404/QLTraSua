@@ -1,0 +1,46 @@
+﻿@model QLTraSua.Models.DeliveryInfo
+@{
+    ViewData["Title"] = "Success";
+    Layout = "~/Views/Shared/UserPaymentLayout.cshtml"; // Điều chỉnh theo đường dẫn layout của bạn nếu khác
+}
+
+<div class="center-content">
+    <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Icon-Tocotoco.png" alt="Icon TocoToco" />
+    <h2>Đơn hàng của bạn đã hoàn thành!</h2>
+    <h2>Mã đơn hàng: @Model.Id</h2>
+    <p>Người nhận: @Model.CustomerName</p>
+    <p>Địa chỉ giao hàng: @Model.CustomerLocation</p>
+    <p>Chúng tôi sẽ giao hàng trong thời gian sớm nhất.</p>
+    <p>@TempData["SuccessMessage"]</p>
+    <a href="@Url.Action("Index", "Test")" class="back-link">Quay lại trang chính</a>
+</div>
+
+<style>
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height to center vertically */
+        text-align: center;
+    }
+
+        .center-content img {
+            max-width: 100px; /* Adjust the size of the image as needed */
+            margin-bottom: 20px;
+        }
+
+        .center-content h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .center-content p {
+            margin-bottom: 15px;
+        }
+
+    .back-link {
+        text-decoration: none; /* Remove underline */
+    }
+
+</style>

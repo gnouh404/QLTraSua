@@ -4,192 +4,325 @@
 
 
 }
-<div class="page-checkout">
-    <div class="checkout-top">
-        <div class="left">
-            <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        </div>
-        <div class="center">Thanh toán</div>
-        <div class="right"></div>
-    </div>
-    <div class="tabbar-header-checkout">
-        <div class="btn-tabar-checkout active" type="DELI" id="btn-deli">Giao hàng tận nơi</div>
-        <div class="btn-tabar-checkout" type="PICK" id="btn-pick">Nhận tại cửa hàng</div>
-    </div>
-    <div class="checkout-detail">
-        <div class="checkout-detail-left">
-            <div class="delivery-info">
-                <div class="delivery-info-title">
-                    <div class="delivery-info-title-left">Thông tin giao hàng</div>
-                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+@model QLTraSua.Models.DeliveryInfo
+<div>
+    <form asp-action="Payment" method="post">
+        <div class="page-checkout">
+            <div class="checkout-top">
+                <div class="left">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
                 </div>
-                <div class="delivery-info-content">
-                    <div class="wrap-input">
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                        <input type="text" id="customer-name" placeholder="Tên người nhận">
-                    </div>
-                    <div class="wrap-input">
-                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                        <input type="text" id="customer-phone" placeholder="Số điện thoại người nhận" maxlength="10">
-                    </div>
-                    <div class="delivery-location">
-                        <div class="delivery-location-title" id="delivery-title">Giao đến</div>
-                        <div class="wrap-input wrap-location">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <input type="text" id="customer-location" placeholder="Địa chỉ người nhận">
+                <div class="center">Thanh toán</div>
+                <div class="right"></div>
+            </div>
+            <div class="tabbar-header-checkout">
+                <div class="btn-tabar-checkout active" type="DELI" id="btn-deli">Giao hàng tận nơi</div>
+                <div class="btn-tabar-checkout" type="PICK" id="btn-pick">Nhận tại cửa hàng</div>
+            </div>
+            <div class="checkout-detail">
+                <div class="checkout-detail-left">
+                    <div class="delivery-info">
+                        <div class="delivery-info-title">
+                            <div class="delivery-info-title-left">Thông tin giao hàng</div>
+                            <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
                         </div>
-                        <div class="wrap-input wrap-input-note" id="input-note">
-                            <i class="fas fa-sticky-note" aria-hidden="true"></i>
-                            <input type="text" id="customer-note" placeholder="Ghi chú địa chỉ...">
+                        <div class="delivery-info-content">
+                            <div class="wrap-input">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <input type="text" name="CustomerName" id="customer-name" placeholder="Tên người nhận">
+                            </div>
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                            <div class="wrap-input">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                <input type="text" name="CustomerPhone" id="customer-phone" placeholder="Số điện thoại người nhận" maxlength="10">
+                            </div>
+                            <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+                            <div class="delivery-location">
+                                <div class="delivery-location-title" id="delivery-title">Giao đến</div>
+                                <div class="wrap-input wrap-location">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <input type="text" name="CustomerLocation" id="customer-location" placeholder="Địa chỉ người nhận">
+                                </div>
+                                <span asp-validation-for="CustomerLocation" class="text-danger"></span>
+                                <div class="wrap-input wrap-input-note" id="input-note">
+                                    <i class="fas fa-sticky-note" aria-hidden="true"></i>
+                                    <input type="text" name="CustomerNote" id="customer-note" placeholder="Ghi chú địa chỉ...">
+                                </div>
+                                <div id="map-checkout"></div>
+                            </div>
+                            <div class="delivery-datetime">
+                                <div class="left">
+                                    Giao hàng <span class="time"><span class="hour" id="delivery-hour"></span>:<span class="minute" id="delivery-minute"></span></span> - hôm nay <span class="date" id="delivery-date"></span>
+                                </div>
+                                <div class="right edit-delivery-datetime" id="edit-delivery-time">Sửa</div>
+                            </div>
+
                         </div>
-                        <div id="map-checkout"></div>
                     </div>
-                    <div class="delivery-datetime">
-                        <div class="left">Giao hàng <span class="time"><span class="hour">15</span>:<span class="minute">40</span></span> - hôm nay <span class="date">19/10/2024</span></div>
-                        <div class="right edit-delivery-datetime">Sửa</div>
+                    <div class="delivery-info payment-method">
+                        <div class="delivery-info-title">
+                            <div class="delivery-info-title-left">Phương thức thanh toán</div>
+                            <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="delivery-info-content">
+                            <label class="container-radio cod-payment">
+                                <span>Thanh toán khi nhận hàng</span>
+                                <input checked="" type="radio" name="type" value="cold">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                            <label class="container-radio momo-payment">
+                                <span>Thanh toán qua Ví MoMo</span>
+                                <input type="radio" name="type" value="momo">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                            <label class="container-radio vnpay-payment" hidden="">
+                                <span>Thanh toán qua Ví VNPAY</span>
+                                <input type="radio" name="type" value="vnpay">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                            <div class="form-group ml-4 children-vnpay">
+                                <label class="container-radio">
+                                    <span>Cổng thanh toán VNPAYQR</span>
+                                    <input type="radio" checked="True" id="bankCode" name="bankCode" value="">
+                                    <span class="checkmark-radio"></span>
+                                </label>
+                                <label class="container-radio ">
+                                    <span>Thanh toán bằng ứng dụng hỗ trợ VNPAYQR</span>
+                                    <input type="radio" id="bankCode" name="bankCode" value="VNPAYQR">
+                                    <span class="checkmark-radio"></span>
+                                </label>
+                                <label class="container-radio">
+                                    <span>Thanh toán qua thẻ ATM/Tài khoản nội địa</span>
+                                    <input type="radio" id="bankCode" name="bankCode" value="VNBANK">
+                                    <span class="checkmark-radio"></span>
+                                </label>
+                                <label class="container-radio">
+                                    <span>Thanh toán qua thẻ quốc tế</span>
+                                    <input type="radio" id="bankCode" name="bankCode" value="INTCARD">
+                                    <span class="checkmark-radio"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-detail-right">
+                    <div class="delivery-info order-info">
+                        <div class="delivery-info-title">
+                            <div class="delivery-info-title-left">Thông tin đơn hàng</div>
+                            <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="delivery-info-content">
+                            <div class="choose-store">
+                                <div class="choose-store-title">Chọn cửa hàng</div>
+                                <div class="choose-store-content">
+                                    <div class="left">
+                                        <i class="fas fa-store" aria-hidden="true"></i>
+                                        <div class="store-name"></div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="distance"></div>
+                                        <input type="hidden" name="distance">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-checkout">
+                                <div class="product-checkout">
+                                    <img src="https://tocotocotea.com/wp-content/uploads/2024/10/O-Long-Yen-Mach.png" alt="">
+                                    <div class="product-checkout-content">
+                                        <div class="title">Ô Long Yến Mạch (M)</div>
+                                        <div class="customizations">100% đường,100% đá,</div>
+                                        <div class="quantity">25.000đ x 1 = 25.000đ</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promotion-code">
+                                <div class="left">
+                                    <img src="https://tocotocotea.com/wp-content/themes/tocotocotea/assets/images/icon-promotion.png" alt="" class="promotion-icon">
+                                    <div class="text">Mã khuyến mại</div>
+                                </div>
+                                <div class="right">
+                                    <div class="btn-add-voucher">
+                                        Thêm khuyến mại
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-price">
+                                <div class="price-top">
+                                    <div class="quantity">Số lượng cốc: <span class="quanity-number">1</span> cốc</div>
+                                    <div class="total">
+                                        <span class="total-title">Tổng:</span>
+                                        <div class="txt-right total-number">25.000đ</div>
+                                    </div>
+                                </div>
+                                <div class="transport-price">
+                                    <div class="transport-price-title">Phí vận chuyển:</div>
+                                    <div class="txt-right">0đ</div>
+                                </div>
+                                <div class="promotion-amount">
+                                    <div class="promotion-amount-title">Khuyến mãi:</div>
+                                    <div class="txt-right">0đ</div>
+                                </div>
+                                <div class="grand-total">
+                                    <div class="grand-total-title">Tổng cộng:</div>
+                                    <div class="txt-right grand-total-number">25.000đ</div>
+                                </div>
+                            </div>
+                            <div class="checkout-note">
+                                <textarea type="text" placeholder="Thêm ghi chú..." class="ta-checkout-note"></textarea>
+                            </div>
+                            <div class="wrap-checkout-btn">
+                                <button type="submit" id="submitOrderButton" class="btn-order">ĐẶT HÀNG</button>
+                                <a asp-action="Index" asp-controller="Test" method="post" style="text-decoration: none;"><div class="btn-back-to-menu">TIẾP TỤC MUA HÀNG</div></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="delivery-info payment-method">
-                <div class="delivery-info-title">
-                    <div class="delivery-info-title-left">Phương thức thanh toán</div>
-                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
-                </div>
-                <div class="delivery-info-content">
-                    <label class="container-radio cod-payment">
-                        <span>Thanh toán khi nhận hàng</span>
-                        <input checked="" type="radio" name="type" value="cold">
-                        <span class="checkmark-radio"></span>
-                    </label>
-                    <label class="container-radio momo-payment">
-                        <span>Thanh toán qua Ví MoMo</span>
-                        <input type="radio" name="type" value="momo">
-                        <span class="checkmark-radio"></span>
-                    </label>
-                    <label class="container-radio vnpay-payment" hidden="">
-                        <span>Thanh toán qua Ví VNPAY</span>
-                        <input type="radio" name="type" value="vnpay">
-                        <span class="checkmark-radio"></span>
-                    </label>
-                    <div class="form-group ml-4 children-vnpay">
-                        <label class="container-radio">
-                            <span>Cổng thanh toán VNPAYQR</span>
-                            <input type="radio" checked="True" id="bankCode" name="bankCode" value="">
-                            <span class="checkmark-radio"></span>
-                        </label>
-                        <label class="container-radio ">
-                            <span>Thanh toán bằng ứng dụng hỗ trợ VNPAYQR</span>
-                            <input type="radio" id="bankCode" name="bankCode" value="VNPAYQR">
-                            <span class="checkmark-radio"></span>
-                        </label>
-                        <label class="container-radio">
-                            <span>Thanh toán qua thẻ ATM/Tài khoản nội địa</span>
-                            <input type="radio" id="bankCode" name="bankCode" value="VNBANK">
-                            <span class="checkmark-radio"></span>
-                        </label>
-                        <label class="container-radio">
-                            <span>Thanh toán qua thẻ quốc tế</span>
-                            <input type="radio" id="bankCode" name="bankCode" value="INTCARD">
-                            <span class="checkmark-radio"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="checkout-detail-right">
-            <div class="delivery-info order-info">
-                <div class="delivery-info-title">
-                    <div class="delivery-info-title-left">Thông tin đơn hàng</div>
-                    <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
-                </div>
-                <div class="delivery-info-content">
-                    <div class="choose-store">
-                        <div class="choose-store-title">Chọn cửa hàng</div>
-                        <div class="choose-store-content">
-                            <div class="left">
-                                <i class="fas fa-store" aria-hidden="true"></i>
-                                <div class="store-name"></div>
-                            </div>
-                            <div class="right">
-                                <div class="distance"></div>
-                                <input type="hidden" name="distance">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-checkout">
-                        <div class="product-checkout">
-                            <img src="https://tocotocotea.com/wp-content/uploads/2024/10/O-Long-Yen-Mach.png" alt="">
-                            <div class="product-checkout-content">
-                                <div class="title">Ô Long Yến Mạch (M)</div>
-                                <div class="customizations">100% đường,100% đá,</div>
-                                <div class="quantity">25.000đ x 1 = 25.000đ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promotion-code">
-                        <div class="left">
-                            <img src="https://tocotocotea.com/wp-content/themes/tocotocotea/assets/images/icon-promotion.png" alt="" class="promotion-icon">
-                            <div class="text">Mã khuyến mại</div>
-                        </div>
-                        <div class="right">
-                            <div class="btn-add-voucher">
-                                Thêm khuyến mại
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkout-price">
-                        <div class="price-top">
-                            <div class="quantity">Số lượng cốc: <span class="quanity-number">1</span> cốc</div>
-                            <div class="total">
-                                <span class="total-title">Tổng:</span>
-                                <div class="txt-right total-number">25.000đ</div>
-                            </div>
-                        </div>
-                        <div class="transport-price">
-                            <div class="transport-price-title">Phí vận chuyển:</div>
-                            <div class="txt-right">0đ</div>
-                        </div>
-                        <div class="promotion-amount">
-                            <div class="promotion-amount-title">Khuyến mãi:</div>
-                            <div class="txt-right">0đ</div>
-                        </div>
-                        <div class="grand-total">
-                            <div class="grand-total-title">Tổng cộng:</div>
-                            <div class="txt-right grand-total-number">25.000đ</div>
-                        </div>
-                    </div>
-                    <div class="checkout-note">
-                        <textarea type="text" placeholder="Thêm ghi chú..." class="ta-checkout-note"></textarea>
-                    </div>
-                    <div class="wrap-checkout-btn">
-                        <div class="btn-order">ĐẶT HÀNG</div>
-                        <div class="btn-back-to-menu">TIẾP TỤC MUA HÀNG</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
 </div>
 <script>
-    const btnPick = document.getElementById("btn-pick");
-    const btnDeli = document.getElementById("btn-deli");
-    const inputNote = document.getElementById("input-note");
-    const deliveryTitle = document.getElementById("delivery-title");
-
-    btnPick.addEventListener("click", function () {
-        inputNote.style.display = "none"; // Ẩn ghi chú
-        deliveryTitle.innerText = "Địa điểm nhận"; // Đổi tiêu đề
-    });
-
-    btnDeli.addEventListener("click", function () {
-        inputNote.style.display = "block"; // Hiện ghi chú
-        deliveryTitle.innerText = "Giao đến"; // Đổi lại tiêu đề
-    });
-
     document.addEventListener('DOMContentLoaded', function () {
-        const button = document.querySelector('.login-button .btn');
-        button.innerHTML = '<i class="fa-regular fa-user"></i>'; // Thay đổi nội dung nút
+        const btnPick = document.getElementById("btn-pick");
+        const btnDeli = document.getElementById("btn-deli");
+        const inputNote = document.getElementById("input-note");
+        const deliveryTitle = document.getElementById("delivery-title");
+
+        if (btnDeli && btnPick && inputNote && deliveryTitle) {
+            btnDeli.addEventListener("click", function () {
+                inputNote.style.display = "block";
+                deliveryTitle.innerText = "Giao đến";
+                btnDeli.style.backgroundColor = "#FF5733";
+                btnDeli.style.color = "white";
+                btnPick.style.backgroundColor = "#fff";
+                btnPick.style.color = "";
+            });
+
+            btnPick.addEventListener("click", function () {
+                inputNote.style.display = "none";
+                deliveryTitle.innerText = "Địa điểm nhận";
+                btnPick.style.backgroundColor = "#FF5733";
+                btnPick.style.color = "white";
+                btnDeli.style.backgroundColor = "#fff";
+                btnDeli.style.color = "#FF5733";
+            });
+        }
+
+        // Lấy dữ liệu giỏ hàng từ sessionStorage
+        const cartData = localStorage.getItem('cart');
+        const listCheckout = document.querySelector('.list-checkout');
+        const quantityNumber = document.querySelector('.quanity-number');
+        const totalNumber = document.querySelector('.total-number');
+        const grandTotalNumber = document.querySelector('.grand-total-number');
+        const transportPriceNumber = document.querySelector('.transport-price .txt-right');
+        const promotionAmountNumber = document.querySelector('.promotion-amount .txt-right');
+
+        let totalQuantity = 0;
+        let totalPrice = 0;
+
+        if (cartData && listCheckout) {
+            const cart = JSON.parse(cartData);
+            listCheckout.innerHTML = cart.map(item => {
+                totalQuantity += item.quantity; // Tính tổng số lượng
+                const itemTotalPrice = item.price * item.quantity;
+                totalPrice += itemTotalPrice; // Tính tổng giá
+
+                return `
+                                 <div class="product-checkout">
+                                     <img src="${item.img}" alt="${item.name}">
+                                     <div class="product-checkout-content">
+                                         <div class="title">${item.name} (${item.size})</div>
+                                         <div class="customizations">${item.sugar}% đường, ${item.ice}% đá</div>
+                                         <div class="quantity">${item.price.toLocaleString()}đ x ${item.quantity} = ${itemTotalPrice.toLocaleString()}đ</div>
+                                     </div>
+                                 </div>
+                             `;
+            }).join('');
+
+            // Cập nhật số lượng và tổng giá trị
+            quantityNumber.innerText = totalQuantity;
+            totalNumber.innerText = totalPrice.toLocaleString() + 'đ'; // Tổng giá trị các sản phẩm
+            grandTotalNumber.innerText = totalPrice.toLocaleString() + 'đ'; // Tổng cộng
+        } else if (listCheckout) {
+            listCheckout.innerHTML = '<p>Chưa có sản phẩm nào!</p>';
+        }
+
+        // Cập nhật phí vận chuyển và khuyến mãi nếu cần
+        transportPriceNumber.innerText = '0đ'; // Giả định phí vận chuyển là 0đ
+        promotionAmountNumber.innerText = '0đ'; // Giả định không có khuyến mãi
+
+
+        //Time
+        const deliveryHourElement = document.getElementById("delivery-hour");
+        const deliveryMinuteElement = document.getElementById("delivery-minute");
+        const deliveryDateElement = document.getElementById("delivery-date");
+
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinute = now.getMinutes();
+        const currentDate = now.toLocaleDateString('vi-VN');
+
+        // Initialize delivery time and date
+        deliveryHourElement.innerText = currentHour.toString().padStart(2, '0');
+        deliveryMinuteElement.innerText = currentMinute.toString().padStart(2, '0');
+        deliveryDateElement.innerText = currentDate;
+
+        // Function to handle editing delivery time
+        const editDeliveryTime = document.getElementById("edit-delivery-time");
+        editDeliveryTime.addEventListener("click", function () {
+            const newHour = prompt("Nhập giờ giao hàng (0-23):", currentHour);
+            const newMinute = prompt("Nhập phút giao hàng (0-59):", currentMinute);
+
+            // Validate input
+            if (newHour !== null && newMinute !== null) {
+                const hour = parseInt(newHour);
+                const minute = parseInt(newMinute);
+
+                // Check if the input is valid and within the required range
+                if (!isNaN(hour) && !isNaN(minute) && hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59) {
+                    // Ensure the delivery time is not set to a time past 23:00
+                    if (hour < 23 || (hour === 23 && minute === 0)) {
+                        deliveryHourElement.innerText = hour.toString().padStart(2, '0');
+                        deliveryMinuteElement.innerText = minute.toString().padStart(2, '0');
+                    } else {
+                        alert("Thời gian giao hàng phải trước 23:00!");
+                    }
+                } else {
+                    alert("Vui lòng nhập giờ và phút hợp lệ!");
+                }
+            }
+        });
     });
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const deliveryInfo = {
+        // Giả sử bạn có các trường trong DeliveryInfo mà bạn muốn gửi
+        CustomerName: document.getElementById("customerName").value,
+        CustomerPhone: document.getElementById("customerPhone").value,
+        CustomerLocation: document.getElementById("customerLocation").value,
+    };
+
+    // function sendCartDataToController() {
+    //     fetch('/TestController/Payment', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ model: deliveryInfo, cart: cart }) Gửi cả model và cart trong body
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log('Server response:', data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error sending data:', error);
+    //         });
+    // }
+
+    // Gọi hàm khi nhấn nút thanh toán
+    // document.getElementById("submitOrderButton").addEventListener("click", function () {
+    //     sendCartDataToController();
+    // });
+
 
 </script>
