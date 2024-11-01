@@ -22,6 +22,18 @@
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<!-- Display success message if it exists -->
+					@if (TempData["SuccessMessage"] != null)
+					{
+						<div class="alert alert-success">
+							@TempData["SuccessMessage"]
+						</div>
+					}
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 				</div>
 			</div>
@@ -76,7 +88,8 @@
 									</div>
 								</div>
 								}@* </form> *@
-							<p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+							<p class="text-center">Not a member? <a href="@Url.Action("Register", "Auth")">Sign Up</a></p>
+
 						</div>
 					</div>
 				</div>
