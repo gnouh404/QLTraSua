@@ -30,5 +30,6 @@ namespace QLTraSua.Models
 		[DataType(DataType.Password)]
 		[Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp")]
 		public string ConfirmPassword { get; set; }
+		public string? Role { get; set; }
 	}
 }

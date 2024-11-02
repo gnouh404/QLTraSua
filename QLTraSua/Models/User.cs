@@ -38,7 +38,9 @@ namespace QLTraSua.Models
         [Column("phone")]
         public string? Phone { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
+		[Column("role")]
+		public string? Role { get; set; }
+		public virtual ICollection<Order> Orders { get; set; }
 
     }
 }

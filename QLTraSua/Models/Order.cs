@@ -21,7 +21,7 @@ namespace QLTraSua.Models
         public DateTime OrderDate { get; set; }
 
         [Column("total_amount")]
-        public int TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
 
         [Column("status")]
         public bool? Status { get; set; }
@@ -31,11 +31,9 @@ namespace QLTraSua.Models
         public int UserID { get; set; }
 
 
-        [ForeignKey("Customer")]
-        [Column("customer_id")]
-        public int CustomerID { get; set; } // Khóa ngoại đến Customer
+
         public virtual User User { get; set; }
-        public virtual Customer Customer { get; set; }
+   
 
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
     }

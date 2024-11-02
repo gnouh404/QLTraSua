@@ -1,41 +1,56 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using QLTraSua.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<QLTraSuaContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString("QLTraSuaContext"))
+// Thêm IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+
+// Thêm cấu hình DbContext cho Entity Framework Core
+builder.Services.AddDbContext<QLTraSuaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("QLTraSuaContext"))
 );
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddSession();
+// Thêm các dịch vụ vào container
+builder.Services.AddControllersWithViews(); // Cấu hình dịch vụ cho MVC
+builder.Services.AddSession(); // Thêm dịch vụ session
+
 var app = builder.Build();
 
+// Tạo và khởi tạo cơ sở dữ liệu
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<QLTraSuaContext>();
-    dbContext.Seed();
+    dbContext.Seed(); // Gọi phương thức Seed để khởi tạo dữ liệu nếu cần
 }
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// Thiết lập middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseHttpsRedirection(); // Chuyển hướng HTTP sang HTTPS
+app.UseStaticFiles(); // Cho phép phục vụ file tĩnh
 
-app.UseRouting();
+app.UseRouting(); // Kích hoạt định tuyến
 
-app.UseAuthorization();
-app.UseSession();
+app.UseSession(); // Kích hoạt session
 
+app.UseAuthentication(); // Kích hoạt xác thực (nếu có)
+app.UseAuthorization(); // Kích hoạt phân quyền
+
+// Định nghĩa các điểm kết thúc (endpoints)
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=Login}/{id?}");
+    pattern: "{controller=Auth}/{action=Login}/{id?}"); // Điểm kết thúc mặc định
 
-app.Run();
+
+
+app.Run(); // Chạy ứng dụng

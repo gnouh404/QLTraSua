@@ -41,6 +41,34 @@ namespace QLTraSua.Controllers
             // Nếu ModelState không hợp lệ, trả về lại trang Payment để người dùng sửa
             return View("Payment");
         }
+
+		[HttpPost]
+		public IActionResult Logout()
+		{
+			// Xóa thông tin người dùng trong Session
+			HttpContext.Session.Remove("UserName");
+			HttpContext.Session.Remove("UserRole");
+
+			// Chuyển hướng đến trang đăng nhập
+			return RedirectToAction("Login", "Auth");
+		}
+
+
+		[HttpGet]
+        public IActionResult Search(string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return View("Index", _context.Products.Include(p => p.Category).ToList());
+            }
+
+            var searchResults = _context.Products
+                .Include(p => p.Category)
+                .Where(p => p.ProductName.Contains(keyword))
+                .ToList();
+
+            return View("Index", searchResults);
+        }
         //[HttpPost]
         //public IActionResult Payment(DeliveryInfo model)
         //{

@@ -1,16 +1,99 @@
-﻿<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+﻿<<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="">Admin Dashboard</a>
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 20px;">
+                <!-- Adjust the value as needed -->
+                <i class="fas fa-user fa-fw"></i>
+            </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li>
+                    <form asp-action="Logout" method="post" style="display: inline;">
+                        <button type="submit" class="dropdown-item">Đăng Xuất</button>
+                    </form>
+                </li>
             </ul>
         </li>
     </ul>
+
+    <div class="login-button" style="display: inline-block; position: relative;">
+        <button type="button" class="btn" style="background-color: white; color: black;">
+            <img style="width: 35px;" src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur.png" alt="Button Image">
+        </button>
+        <div class="dropdown">
+            <form asp-action="Logout" method="post">
+                <button type="submit" class="logout-btn">Đăng Xuất</button>
+            </form>
+        </div>
+    </div>
 </nav>
+
+<style>
+    .login-button {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%; /* Places it right below the button */
+        left: -45px; /* Moves the dropdown to the left */
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .logout-btn {
+        background-color: transparent;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Show dropdown on hover */
+    .login-button:hover .dropdown {
+        display: block;
+    }
+</style>
+
+
+<style>
+    .login-button {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%; /* Places it right below the button */
+        left: -45px; /* Moves the dropdown 100px to the left */
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .logout-btn {
+        background-color: transparent;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Show dropdown on hover */
+    .login-button:hover .dropdown {
+        display: block;
+    }
+</style>

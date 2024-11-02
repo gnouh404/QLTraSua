@@ -98,14 +98,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/CreateCustomer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZUN1c3RvbWVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/Customer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEN1c3RvbWVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -114,20 +106,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/DeleteCustomer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERlbGV0ZUN1c3RvbWVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/Duyet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXER1eWV0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/EditCustomer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXRDdXN0b21lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Hoc tren truong/Lap trinh web/QLTraSua/QLTraSua/Views/TestAdmin/Index.cshtml]

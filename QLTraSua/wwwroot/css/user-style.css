@@ -13116,3 +13116,13 @@ body {
     gap: 20px;
     width: 530px;
 }
+.product-search button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+    .product-search button:focus {
+        outline: none;
+    }
