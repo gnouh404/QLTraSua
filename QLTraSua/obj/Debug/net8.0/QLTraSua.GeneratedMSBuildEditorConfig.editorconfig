@@ -9,159 +9,159 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QLTraSua
 build_property.RootNamespace = QLTraSua
-build_property.ProjectDir = C:\Users\arima\OneDrive\Máy tính\Ta_Tua\QLTraSua\QLTraSua\
+build_property.ProjectDir = C:\Users\Phuong\Source\Repos\QLTraSua\QLTraSua\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\arima\OneDrive\Máy tính\Ta_Tua\QLTraSua\QLTraSua
+build_property.MSBuildProjectDirectory = C:\Users\Phuong\Source\Repos\QLTraSua\QLTraSua
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Auth/Login.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Auth/Register.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Home/Index.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Home/Privacy.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/AdminFooter.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/AdminFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/AdminLayout.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/AdminLeftMenu.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/AdminLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGVmdE1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/AdminTopNav.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/AdminTopNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluVG9wTmF2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/Components/Render/RenderLeftMenu.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/Components/Render/RenderLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVuZGVyXFJlbmRlckxlZnRNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/Error.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/Main.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1haW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/MyLayoutHelper.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/MyLayoutHelper.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE15TGF5b3V0SGVscGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserFooter.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJGb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserLayout.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserLeftMenu.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserLeftMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJMZWZ0TWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserPaymentLayout.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserPaymentLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJQYXltZW50TGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserRightMenu.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserRightMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJSaWdodE1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/UserTopNav.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/UserTopNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJUb3BOYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Create.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/CreateCustomer.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/CreateCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXENyZWF0ZUN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Customer.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Customer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Dashboard.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Delete.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/DeleteCustomer.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/DeleteCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXERlbGV0ZUN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Duyet.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Duyet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXER1eWV0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Edit.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/EditCustomer.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/EditCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEVkaXRDdXN0b21lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Index.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Index1.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Index1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEluZGV4MS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/TestAdmin/Index2.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/TestAdmin/Index2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdEFkbWluXEluZGV4Mi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Test/Index.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Test/Payment.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Test/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Test/SuccessPayment.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Test/SuccessPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxTdWNjZXNzUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/_ViewImports.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/_ViewStart.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arima/OneDrive/Máy tính/Ta_Tua/QLTraSua/QLTraSua/Views/Shared/_Layout.cshtml]
+[C:/Users/Phuong/Source/Repos/QLTraSua/QLTraSua/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-117u2bpuog

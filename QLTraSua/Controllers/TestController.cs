@@ -41,39 +41,54 @@ namespace QLTraSua.Controllers
             // Nếu ModelState không hợp lệ, trả về lại trang Payment để người dùng sửa
             return View("Payment");
         }
-        //[HttpPost]
-        //public IActionResult Payment(DeliveryInfo model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        // Truy xuất dữ liệu giỏ hàng (giả định là dữ liệu này được truyền từ client dưới dạng JSON)
-        //        var cartData = Request.Form["CartData"];
-        //        var cartItems = JsonConvert.DeserializeObject<List<CartItem>>(cartData);
+		[HttpGet]
+		public IActionResult Search(string keyword)
+		{
+			if (string.IsNullOrEmpty(keyword))
+			{
+				return View("Index", _context.Products.Include(p => p.Category).ToList());
+			}
 
-        //        // Tạo một đơn hàng mới
-        //        var order = new Order
-        //        {
-        //            OrderDate = DateTime.Now,
-        //            PaymentMethod = model.PaymentType,
-        //            TotalAmount = cartItems.Sum(item => item.Price * item.Quantity),
-        //            OrderDetails = cartItems.Select(item => new OrderDetails
-        //            {
-        //                ProductName = item.Name,
-        //                Quantity = item.Quantity,
-        //                Price = item.Price,
-        //                Customization = $"{item.Sugar}% đường, {item.Ice}% đá"
-        //            }).ToList()
-        //        };
+			var searchResults = _context.Products
+				.Include(p => p.Category)
+				.Where(p => p.ProductName.Contains(keyword))
+				.ToList();
 
-        //        // Lưu đơn hàng vào cơ sở dữ liệu (sử dụng QLTraSuaContext)
-        //        _context.Orders.Add(order);
-        //        _context.SaveChanges();
+			return View("Index", searchResults);
+		}
+		//[HttpPost]
+		//public IActionResult Payment(DeliveryInfo model)
+		//{
+		//    if (ModelState.IsValid)
+		//    {
+		//        // Truy xuất dữ liệu giỏ hàng (giả định là dữ liệu này được truyền từ client dưới dạng JSON)
+		//        var cartData = Request.Form["CartData"];
+		//        var cartItems = JsonConvert.DeserializeObject<List<CartItem>>(cartData);
 
-        //        // Điều hướng hoặc hiển thị thông báo thành công
-        //        return RedirectToAction("Success"); // Tùy chỉnh theo yêu cầu
-        //    }
+		//        // Tạo một đơn hàng mới
+		//        var order = new Order
+		//        {
+		//            OrderDate = DateTime.Now,
+		//            PaymentMethod = model.PaymentType,
+		//            TotalAmount = cartItems.Sum(item => item.Price * item.Quantity),
+		//            OrderDetails = cartItems.Select(item => new OrderDetails
+		//            {
+		//                ProductName = item.Name,
+		//                Quantity = item.Quantity,
+		//                Price = item.Price,
+		//                Customization = $"{item.Sugar}% đường, {item.Ice}% đá"
+		//            }).ToList()
+		//        };
 
-        //    return View(model);
-        //}
-    }
+		//        // Lưu đơn hàng vào cơ sở dữ liệu (sử dụng QLTraSuaContext)
+		//        _context.Orders.Add(order);
+		//        _context.SaveChanges();
+
+		//        // Điều hướng hoặc hiển thị thông báo thành công
+		//        return RedirectToAction("Success"); // Tùy chỉnh theo yêu cầu
+		//    }
+
+		//    return View(model);
+		//}
+	}
 }
